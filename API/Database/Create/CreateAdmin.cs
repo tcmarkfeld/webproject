@@ -16,12 +16,12 @@ namespace API.Database.Create
 
             try
             {
-                //string stm = @"INSERT INTO admin(post, date) VALUES(@post, @date)";
+                string stm = @"INSERT INTO admin(post, date) VALUES(@post, @date)";
 
                 using var cmd = new MySqlCommand(stm, con);
 
-                cmd.Parameters.AddWithValue("@post", post);
-                cmd.Parameters.AddWithValue("@date", secondsStripped);
+                //cmd.Parameters.AddWithValue("@post", post);
+                //cmd.Parameters.AddWithValue("@date", secondsStripped);
                 cmd.ExecuteNonQuery();
             }
             catch (System.Exception)
@@ -30,12 +30,12 @@ namespace API.Database.Create
                 using var cmd = new MySqlCommand(stm, con);
                 cmd.ExecuteNonQuery();
 
-                //stm = @"INSERT INTO posts(post, date) VALUES(@post, @date)";
+                stm = @"INSERT INTO posts(post, date) VALUES(@post, @date)";
 
                 using var cmd2 = new MySqlCommand(stm, con);
 
-                cmd2.Parameters.AddWithValue("@post", post);
-                cmd2.Parameters.AddWithValue("@date", secondsStripped);
+                //cmd2.Parameters.AddWithValue("@post", post);
+                //cmd2.Parameters.AddWithValue("@date", secondsStripped);
                 cmd2.ExecuteNonQuery();
             }
         }
