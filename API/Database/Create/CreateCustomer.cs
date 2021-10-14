@@ -30,7 +30,7 @@ namespace API.Database.Create
                 using var cmd = new MySqlCommand(stm, con);
                 cmd.ExecuteNonQuery();
 
-                stm = @"INSERT INTO posts(post, date) VALUES(@post, @date)";
+                stm = @"INSERT INTO customer(post, date) VALUES(@post, @date)";
 
                 using var cmd2 = new MySqlCommand(stm, con);
 

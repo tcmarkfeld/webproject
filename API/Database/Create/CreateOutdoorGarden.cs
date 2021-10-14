@@ -4,9 +4,9 @@ using webproject;
 
 namespace API.Database.Create
 {
-    public class CreateAdmin : ICreateAdmin
+    public class CreateOutdoorGarden : ICreateOutdoorGarden
     {
-        void ICreateAdmin.CreateAdmin()
+        void ICreateOutdoorGarden.CreateOutdoorGarden()
         {
             ConnectionString myConnection = new ConnectionString();
             string cs = myConnection.cs;
@@ -16,7 +16,7 @@ namespace API.Database.Create
 
             try
             {
-                string stm = @"INSERT INTO admin(post, date) VALUES(@post, @date)";
+                string stm = @"INSERT INTO outdoorgarden(post, date) VALUES(@post, @date)";
 
                 using var cmd = new MySqlCommand(stm, con);
 
@@ -26,11 +26,11 @@ namespace API.Database.Create
             }
             catch (System.Exception)
             {
-                string stm = @"CREATE TABLE `rzjhrsv8r22agupi`.`admin` (`adminid` INT NOT NULL AUTO_INCREMENT,`firstName` VARCHAR(45) NOT NULL,`lastName` VARCHAR(45) NOT NULL,`email` VARCHAR(45) NOT NULL,`position` VARCHAR(45) NOT NULL,`startdate` DATE NOT NULL,PRIMARY KEY (`adminid`));";
+                string stm = @"CREATE TABLE `rzjhrsv8r22agupi`.`outdoorgarden` (`gardenid` INT NOT NULL AUTO_INCREMENT,`information` LONGTEXT NULL,PRIMARY KEY (`gardenid`));";
                 using var cmd = new MySqlCommand(stm, con);
                 cmd.ExecuteNonQuery();
 
-                stm = @"INSERT INTO admin(post, date) VALUES(@post, @date)";
+                stm = @"INSERT INTO outdoorgarden(post, date) VALUES(@post, @date)";
 
                 using var cmd2 = new MySqlCommand(stm, con);
 
