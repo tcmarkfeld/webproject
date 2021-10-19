@@ -4,7 +4,6 @@ namespace webproject
 {
     public class Database
     {
-
         public string cs { get; set; }
         public MySqlConnection Conn { get; set; }
         public Database()
