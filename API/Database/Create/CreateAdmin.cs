@@ -1,5 +1,6 @@
 using API.Interfaces.Create;
 using MySql.Data.MySqlClient;
+using API.Database;
 using webproject;
 
 namespace API.Database.Create
@@ -8,7 +9,7 @@ namespace API.Database.Create
     {
         void ICreateAdmin.CreateAdmin()
         {
-            ConnectionString myConnection = new ConnectionString();
+            Database myConnection = new Database();
             string cs = myConnection.cs;
 
             using var con = new MySqlConnection(cs);
