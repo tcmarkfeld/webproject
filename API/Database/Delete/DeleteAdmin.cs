@@ -1,4 +1,4 @@
-using API.Models.Interfaces.Delete;
+using API.Interfaces.Delete;
 using MySql.Data.MySqlClient;
 using webproject;
 

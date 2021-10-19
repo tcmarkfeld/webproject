@@ -1,4 +1,4 @@
-using API.Models.Interfaces.Create;
+using API.Interfaces.Create;
 using MySql.Data.MySqlClient;
 using webproject;
 

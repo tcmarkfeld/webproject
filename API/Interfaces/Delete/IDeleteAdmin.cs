@@ -1,4 +1,4 @@
-namespace API.Models.Interfaces.Delete
+namespace API.Interfaces.Delete
 {
     public interface IDeleteAdmin
     {

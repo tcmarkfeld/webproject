@@ -1,4 +1,4 @@
-namespace API.Models.Interfaces.Create
+namespace API.Interfaces.Create
 {
     public interface ICreateCorporateGarden
     {
