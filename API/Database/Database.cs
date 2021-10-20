@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using MySql.Data;
 using MySql.Data.MySqlClient;
 namespace webproject
 {
@@ -11,14 +16,14 @@ namespace webproject
         public Database()
         {
             string server = Environment.GetEnvironmentVariable("qlg_database_server");
-            string database = Environment.GetEnvironmentVariable("qlg_database_name");
+            string name = Environment.GetEnvironmentVariable("qlg_database_name");
             string port = Environment.GetEnvironmentVariable("qlg_database_port");
             string userName = Environment.GetEnvironmentVariable("qlg_database_username");
             string password = Environment.GetEnvironmentVariable("qlg_database_password");
 
             System.Console.WriteLine("got the database " + server);
 
-            this.cs = $@"server = {server};user = {userName};database = {database};port = {port}; password={password};";
+            this.cs = $@"server = {server};user = {userName};database = {name};port = {port}; password={password};";
             this.Conn = new MySqlConnection(this.cs);
         }
 
