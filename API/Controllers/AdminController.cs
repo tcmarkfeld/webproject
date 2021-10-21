@@ -16,14 +16,15 @@ namespace api.Controllers
     {
         // GET: api/Admin
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Admin> Get()
         {
-            return new string[] { "value1", "value2" };
+            IAdminDataHandler dataHandler = new AdminDataHandler();
+            return dataHandler.Select();
         }
 
         // GET: api/Admin/5
         [HttpGet("{id}", Name = "GetAdmin")]
-        public List<Admin> Get(int id)
+        public List<Admin> Get(int id) // not made
         {
             IAdminDataHandler dataHandler = new AdminDataHandler();
             return dataHandler.Select();
