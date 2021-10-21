@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.database;
 using API.Interfaces;
 using API.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace api.Controllers
     public class AdminController : ControllerBase
     {
         // GET: api/Admin
+        [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<Admin> Get()
         {
@@ -23,26 +25,30 @@ namespace api.Controllers
         }
 
         // GET: api/Admin/5
+        [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "GetAdmin")]
-        public List<Admin> Get(int id) // not made
+        public List<Admin> Get(int id)
         {
             IAdminDataHandler dataHandler = new AdminDataHandler();
-            return dataHandler.Select();
+            return dataHandler.SelectID(id);
         }
 
         // POST: api/Admin
+        [EnableCors("OpenPolicy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/Admin/5
+        [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/Admin/5
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

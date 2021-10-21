@@ -51,5 +51,30 @@ namespace API.database
         {
             throw new System.NotImplementedException();
         }
+
+        public List<Admin> SelectID(int id)
+        {
+            List<Admin> myAdmin = new List<Admin>();
+
+            string stm = @"SELECT * from admin where adminid = '" + id + "'";
+            db.Open();
+            List<ExpandoObject> results = db.Select(stm);
+
+            foreach (dynamic item in results)
+            {
+                Admin temp = new Admin()
+                {
+                    AdminID = item.adminid,
+                    FirstName = item.firstName,
+                    LastName = item.lastName,
+                    Email = item.email,
+                    Position = item.position,
+                    StartDate = item.startdate,
+                };
+                myAdmin.Add(temp);
+            }
+            db.Close();
+            return myAdmin;
+        }
     }
 }

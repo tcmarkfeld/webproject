@@ -9,5 +9,6 @@ namespace API.Interfaces
         public void Delete(Admin admin);
         public void Insert(Admin admin);
         public void Update(Admin admin);
+        public List<Admin> SelectID(int id);
     }
 }

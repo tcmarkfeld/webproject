@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.database;
 using API.Interfaces;
 using API.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace api.Controllers
     public class PlantInformationController : ControllerBase
     {
         // GET: api/PlantInformation
+        [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<PlantInformation> Get()
         {
@@ -23,6 +25,7 @@ namespace api.Controllers
         }
 
         // GET: api/PlantInformation/5
+        [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "GetPlantInformation")]
         public string Get(int id)
         {
@@ -30,18 +33,21 @@ namespace api.Controllers
         }
 
         // POST: api/PlantInformation
+        [EnableCors("OpenPolicy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/PlantInformation/5
+        [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/PlantInformation/5
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
