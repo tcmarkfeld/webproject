@@ -49,6 +49,33 @@ namespace API.database
             return myPlant;
         }
 
+        public List<PlantInformation> SelectID(int id)
+        {
+            List<PlantInformation> myPlant = new List<PlantInformation>();
+
+            string stm = @"SELECT * from plantinformation where plantid = '" + id + "'";
+            db.Open();
+            List<ExpandoObject> results = db.Select(stm);
+
+            foreach (dynamic item in results)
+            {
+                PlantInformation temp = new PlantInformation()
+                {
+                    PlantID = item.plantid,
+                    PlantName = item.plantname,
+                    Location = item.location,
+                    NumTimesWater = item.notimeswater,
+                    SunNeeds = item.sunneeds,
+                    Information = item.information,
+                    FunFact = item.funfact,
+                    Picture = item.picture,
+                };
+                myPlant.Add(temp);
+            }
+            db.Close();
+            return myPlant;
+        }
+
         public void Update(PlantInformation plantInformation)
         {
             throw new System.NotImplementedException();

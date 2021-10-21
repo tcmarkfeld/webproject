@@ -27,9 +27,10 @@ namespace api.Controllers
         // GET: api/PlantInformation/5
         [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "GetPlantInformation")]
-        public string Get(int id)
+        public List<PlantInformation> Get(int id)
         {
-            return "value";
+            IPlantInformationDataHandler dataHandler = new PlantInformationDataHandler();
+            return dataHandler.SelectID(id);
         }
 
         // POST: api/PlantInformation
