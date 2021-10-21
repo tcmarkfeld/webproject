@@ -1,6 +1,6 @@
 using API.Interfaces;
 
-namespace API.Data
+namespace API.database
 {
     public class ReportsDataHandler : IReportsDataHandler
     {

@@ -3,7 +3,7 @@ using System.Dynamic;
 using API.Interfaces;
 using API.Models;
 
-namespace API.Data
+namespace API.database
 {
     public class AdminDataHandler : IAdminDataHandler
     {
