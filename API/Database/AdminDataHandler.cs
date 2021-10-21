@@ -24,7 +24,7 @@ namespace API.database
             {
                 Admin temp = new Admin()
                 {
-                    ID = item.adminid,
+                    AdminID = item.adminid,
                     FirstName = item.firstName,
                     LastName = item.lastName,
                     Email = item.email,

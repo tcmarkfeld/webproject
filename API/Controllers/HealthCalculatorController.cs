@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.database;
+using API.Interfaces;
+using API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +16,10 @@ namespace api.Controllers
     {
         // GET: api/HealthCalculator
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<HealthCalculator> Get()
         {
-            return new string[] { "value1", "value2" };
+            IHealthCalculatorDataHandler dataHandler = new HealthCalculatorDataHandler();
+            return dataHandler.Select();
         }
 
         // GET: api/HealthCalculator/5
