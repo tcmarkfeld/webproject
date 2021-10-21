@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-namespace webproject
+namespace API.Data
 {
     public class Database
     {
