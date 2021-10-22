@@ -43,7 +43,11 @@ namespace API.database
                     ShippingAddress = item.shippingaddress,
                     BillingAddress = item.billingaddress,
                     PastPurchases = item.pastPurchases,
+<<<<<<< HEAD
                     Status = item.status
+=======
+                    Status = item.Status
+>>>>>>> 44b01e3e13f31688109179f92188febf5336ff1a
                 };
                 myCustomer.Add(temp);
             }

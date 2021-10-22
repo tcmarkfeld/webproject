@@ -13,6 +13,10 @@ namespace API.Models
         public string ShippingAddress { get; set; }
         public string BillingAddress { get; set; }
         public string PastPurchases { get; set; }
+<<<<<<< HEAD
         public string Status { get; set; }
+=======
+        public string Status {  get; set; } 
+>>>>>>> 44b01e3e13f31688109179f92188febf5336ff1a
     }
 }
