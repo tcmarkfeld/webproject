@@ -42,7 +42,8 @@ namespace API.database
                     CreditCard = item.creditcard,
                     ShippingAddress = item.shippingaddress,
                     BillingAddress = item.billingaddress,
-                    PastPurchases = item.pastPurchases
+                    PastPurchases = item.pastPurchases,
+                    Status = item.status
                 };
                 myCustomer.Add(temp);
             }
