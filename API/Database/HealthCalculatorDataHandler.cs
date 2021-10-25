@@ -14,12 +14,20 @@ namespace API.database
         }
         public void Delete(HealthCalculator healthCalculator)
         {
-            throw new System.NotImplementedException();
+            string stm = $@"DELETE FROM healthcalculator WHERE testid = {healthCalculator.TestID}";
+            db.Delete(stm);
         }
 
         public void Insert(HealthCalculator healthCalculator)
         {
-            throw new System.NotImplementedException();
+            string stm = @"INSERT INTO healthcalculator(testid,planttype,timeswatered) VALUES(@id,@type,@times)";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",healthCalculator.TestID);
+            fields.Add("@type",healthCalculator.PlantType);
+            fields.Add("@times",healthCalculator.TimesWatered);
+            db.Insert(stm,fields);
+            db.Close();
         }
 
         public List<HealthCalculator> Select()
@@ -46,7 +54,14 @@ namespace API.database
 
         public void Update(HealthCalculator healthCalculator)
         {
-            throw new System.NotImplementedException();
+            string stm = @"UPDATE healthcalculator SET planttype = @type, timeswatered = @times WHERE testid = @id";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",healthCalculator.TestID);
+            fields.Add("@type",healthCalculator.PlantType);
+            fields.Add("@times",healthCalculator.TimesWatered);
+            db.Update(stm,fields);
+            db.Close();
         }
     }
 }

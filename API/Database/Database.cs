@@ -74,6 +74,13 @@ namespace API.database
             QueryWithData(query, values);
         }
 
+        public void Delete(string stm)
+        {
+            using var cmd = new MySqlCommand(stm,this.Conn);
+            cmd.ExecuteNonQuery();
+        }
+        
+
         private void QueryWithData(string query, Dictionary<string, object> values)
         {
             try

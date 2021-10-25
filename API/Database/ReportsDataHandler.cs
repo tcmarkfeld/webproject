@@ -14,12 +14,19 @@ namespace API.database
         }
         public void Delete(Reports reports)
         {
-            throw new System.NotImplementedException();
+            string stm = $@"DELETE FROM reports WHERE reportid = {reports.ReportID}";
+            db.Delete(stm);
         }
 
         public void Insert(Reports reports)
         {
-            throw new System.NotImplementedException();
+            string stm = @"INSERT INTO reports(reportid,report_information) VALUES(@id,@info)";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",reports.ReportID);
+            fields.Add("@info",reports.ReportInformation);
+            db.Insert(stm,fields);
+            db.Close();
         }
 
         public List<Reports> Select()
@@ -45,7 +52,13 @@ namespace API.database
 
         public void Update(Reports reports)
         {
-            throw new System.NotImplementedException();
+            string stm = @"UPDATE reports SET report_information = @info WHERE reportid = @id";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",reports.ReportID);
+            fields.Add("@info",reports.ReportInformation);
+            db.Update(stm,fields);
+            db.Close();
         }
     }
 }

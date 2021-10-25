@@ -14,12 +14,25 @@ namespace API.database
         }
         public void Delete(PlantInformation plantInformation)
         {
-            throw new System.NotImplementedException();
+            string stm = $@"DELETE FROM plantinformation WHERE plantid = {plantInformation.PlantID}";
+            db.Delete(stm);
         }
 
         public void Insert(PlantInformation plantInformation)
         {
-            throw new System.NotImplementedException();
+            string stm = @"INSERT INTO plantinformation(plantid,plantname,location,notimeswater,sunneeds,information,funfact,picture) VALUES(@id,@name,@location,@water,@sun,@info,@fun,@pic)";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",plantInformation.PlantID);
+            fields.Add("@name",plantInformation.PlantName);
+            fields.Add("@location",plantInformation.Location);
+            fields.Add("@water",plantInformation.NumTimesWater);
+            fields.Add("@sun",plantInformation.SunNeeds);
+            fields.Add("@info",plantInformation.Information);
+            fields.Add("@fun",plantInformation.FunFact);
+            fields.Add("@pic",plantInformation.Picture);
+            db.Insert(stm,fields);
+            db.Close();
         }
 
         public List<PlantInformation> Select()
@@ -78,7 +91,19 @@ namespace API.database
 
         public void Update(PlantInformation plantInformation)
         {
-            throw new System.NotImplementedException();
+            string stm = @"UPDATE plantinformation SET plantname = @name, location = @location, notimeswater = @water, sunneeds = @sun, information = @info, funfact = @fun, picture = @pic WHERE plantid = @id";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",plantInformation.PlantID);
+            fields.Add("@name",plantInformation.PlantName);
+            fields.Add("@location",plantInformation.Location);
+            fields.Add("@water",plantInformation.NumTimesWater);
+            fields.Add("@sun",plantInformation.SunNeeds);
+            fields.Add("@info",plantInformation.Information);
+            fields.Add("@fun",plantInformation.FunFact);
+            fields.Add("@pic",plantInformation.Picture);
+            db.Update(stm,fields);
+            db.Close();
         }
     }
 }

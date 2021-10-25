@@ -1,3 +1,5 @@
+using System.Data.Common;
+using System.Data;
 using System.Collections.Generic;
 using System.Dynamic;
 using API.Interfaces;
@@ -39,17 +41,40 @@ namespace API.database
 
         public void Delete(Admin admin)
         {
-            throw new System.NotImplementedException();
+            string stm = $@"DELETE FROM admin WHERE adminid = {admin.AdminID}";
+            db.Delete(stm);
         }
 
         public void Insert(Admin admin)
         {
-            throw new System.NotImplementedException();
+            string stm = @"INSERT INTO admin(adminid,firstName,lastName,email,position,startdate) VALUES(@id,@fn,@ln,@email,@position,@sdate)";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",admin.AdminID);
+            fields.Add("@fm",admin.FirstName);
+            fields.Add("@ln",admin.LastName);
+            fields.Add("@email",admin.Email);
+            fields.Add("@id",admin.AdminID);
+            fields.Add("@position",admin.Position);
+            fields.Add("@sdate",admin.StartDate);
+            db.Insert(stm,fields);
+            db.Close();
         }
 
         public void Update(Admin admin)
         {
-            throw new System.NotImplementedException();
+            string stm = @"UPDATE admin SET firstName = @fn, lastName = @ln, email = @email, position = @position, startdate = @sdate WHERE adminid = @id";
+            db.Open();
+            Dictionary<string,object> fields = new Dictionary<string, object>();
+            fields.Add("@id",admin.AdminID);
+            fields.Add("@fm",admin.FirstName);
+            fields.Add("@ln",admin.LastName);
+            fields.Add("@email",admin.Email);
+            fields.Add("@id",admin.AdminID);
+            fields.Add("@position",admin.Position);
+            fields.Add("@sdate",admin.StartDate);
+            db.Update(stm,fields);
+            db.Close();
         }
 
         public List<Admin> SelectID(int id)
