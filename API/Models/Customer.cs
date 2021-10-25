@@ -13,6 +13,6 @@ namespace API.Models
         public string ShippingAddress { get; set; }
         public string BillingAddress { get; set; }
         public string PastPurchases { get; set; }
-        public string Status {  get; set; } 
+        public string Status { get; set; }
     }
 }

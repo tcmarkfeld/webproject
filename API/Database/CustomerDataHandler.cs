@@ -58,7 +58,7 @@ namespace API.database
                     ShippingAddress = item.shippingaddress,
                     BillingAddress = item.billingaddress,
                     PastPurchases = item.pastPurchases,
-                    Status = item.Status
+                    Status = item.status
                 };
                 myCustomer.Add(temp);
             }
