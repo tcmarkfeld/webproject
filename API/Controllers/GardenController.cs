@@ -13,40 +13,41 @@ namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OutdoorGardenController : ControllerBase
+    public class GardenController : ControllerBase
     {
-        // GET: api/OutdoorGarden
+        // GET: api/Garden
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public List<OutdoorGarden> Get()
+        public List<Garden> Get()
         {
-            IOutdoorGardenDataHandler dataHandler = new OutdoorGardenDataHandler();
+            IGardenDataHandler dataHandler = new GardenDataHandler();
             return dataHandler.Select();
         }
 
-        // GET: api/OutdoorGarden/5
+        // GET: api/Garden/5
         [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetOutdoorGarden")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "Get")]
+        public List<Garden> Get(int id)
         {
-            return "value";
+            IGardenDataHandler dataHandler = new GardenDataHandler();
+            return dataHandler.SelectID(id);
         }
 
-        // POST: api/OutdoorGarden
+        // POST: api/Garden
         [EnableCors("OpenPolicy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/OutdoorGarden/5
+        // PUT: api/Garden/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/OutdoorGarden/5
+        // DELETE: api/Garden/5
         [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
