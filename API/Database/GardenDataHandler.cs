@@ -58,17 +58,32 @@ namespace API.database
 
         public void Delete(Garden garden)
         {
-            throw new System.NotImplementedException();
+            string stm = $@"DELETE FROM garden WHERE gardenid = {garden.GardenID}";
+            db.Delete(stm);
         }
 
         public void Insert(Garden garden)
         {
-            throw new System.NotImplementedException();
+            string stm = @"INSERT INTO garden(gardenid,gardentype,information) VALUES(@id,@type,@info)";
+            db.Open();
+            Dictionary<string, object> fields = new Dictionary<string, object>();
+            fields.Add("@id", garden.GardenID);
+            fields.Add("@type", garden.GardenType);
+            fields.Add("@info", garden.Information);
+            db.Insert(stm, fields);
+            db.Close();
         }
 
         public void Update(Garden garden)
         {
-            throw new System.NotImplementedException();
+            string stm = @"UPDATE garden SET gardenType = @type, information = @info WHERE gardenid = @id";
+            db.Open();
+            Dictionary<string, object> fields = new Dictionary<string, object>();
+            fields.Add("@id", garden.GardenID);
+            fields.Add("@type", garden.GardenType);
+            fields.Add("@info", garden.Information);
+            db.Update(stm, fields);
+            db.Close();
         }
     }
 }
