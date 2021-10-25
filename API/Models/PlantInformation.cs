@@ -11,5 +11,6 @@ namespace API.Models
         public string Information { get; set; }
         public string FunFact { get; set; }
         public byte[] Picture { get; set; }
+        public double Price { get; set; }
     }
 }
