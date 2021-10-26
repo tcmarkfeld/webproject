@@ -35,15 +35,17 @@ namespace api.Controllers
         // POST: api/Reports
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Reports value)
         {
+            value.DataHandler.Insert(value);
         }
 
         // PUT: api/Reports/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Reports value)
         {
+            value.DataHandler.Update(value);
         }
 
         // DELETE: api/Reports/5

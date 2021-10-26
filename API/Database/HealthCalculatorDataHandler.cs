@@ -1,3 +1,4 @@
+using System.ComponentModel.Design;
 using System.Collections.Generic;
 using System.Dynamic;
 using API.Interfaces;
@@ -20,13 +21,12 @@ namespace API.database
 
         public void Insert(HealthCalculator healthCalculator)
         {
+            var values = GetValues(healthCalculator);
+
             string stm = @"INSERT INTO healthcalculator(testid,planttype,timeswatered) VALUES(@id,@type,@times)";
+
             db.Open();
-            Dictionary<string,object> fields = new Dictionary<string, object>();
-            fields.Add("@id",healthCalculator.TestID);
-            fields.Add("@type",healthCalculator.PlantType);
-            fields.Add("@times",healthCalculator.TimesWatered);
-            db.Insert(stm,fields);
+            db.Insert(stm, values);
             db.Close();
         }
 
@@ -54,14 +54,23 @@ namespace API.database
 
         public void Update(HealthCalculator healthCalculator)
         {
+            var values = GetValues(healthCalculator);
             string stm = @"UPDATE healthcalculator SET planttype = @type, timeswatered = @times WHERE testid = @id";
+
             db.Open();
-            Dictionary<string,object> fields = new Dictionary<string, object>();
-            fields.Add("@id",healthCalculator.TestID);
-            fields.Add("@type",healthCalculator.PlantType);
-            fields.Add("@times",healthCalculator.TimesWatered);
-            db.Update(stm,fields);
+            db.Update(stm, values);
             db.Close();
+        }
+
+        public Dictionary<string, object> GetValues(HealthCalculator healthCalculator)
+        {
+            var values = new Dictionary<string, object>(){
+                {"@id", healthCalculator.TestID},
+                {"@type", healthCalculator.PlantType},
+                {"@times", healthCalculator.TimesWatered}
+            };
+
+            return values;
         }
     }
 }

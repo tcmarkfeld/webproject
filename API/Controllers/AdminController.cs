@@ -38,16 +38,15 @@ namespace api.Controllers
         [HttpPost]
         public void Post([FromBody] Admin value)
         {
-            IAdminDataHandler dataHandler = new AdminDataHandler();
-            System.Console.WriteLine("Made it to post method");
-            dataHandler.Insert(value);
+            value.DataHandler.Insert(value);
         }
 
         // PUT: api/Admin/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Admin value)
         {
+            value.DataHandler.Update(value);
         }
 
         // DELETE: api/Admin/5

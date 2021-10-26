@@ -33,7 +33,6 @@ namespace api
                     builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
-            services.AddControllers();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

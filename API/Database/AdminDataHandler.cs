@@ -48,33 +48,24 @@ namespace API.database
         public void Insert(Admin admin)
         {
             System.Console.WriteLine("Made it to the insert");
+
+            var values = GetValues(admin);
+
             string stm = @"INSERT INTO admin(adminid,firstName,lastName,email,position,startdate) VALUES(@id,@fn,@ln,@email,@position,@sdate)";
+
             db.Open();
-            Dictionary<string, object> fields = new Dictionary<string, object>();
-            fields.Add("@id", admin.AdminID);
-            fields.Add("@fm", admin.FirstName);
-            fields.Add("@ln", admin.LastName);
-            fields.Add("@email", admin.Email);
-            fields.Add("@id", admin.AdminID);
-            fields.Add("@position", admin.Position);
-            fields.Add("@sdate", admin.StartDate);
-            db.Insert(stm, fields);
+            db.Insert(stm, values);
             db.Close();
         }
 
         public void Update(Admin admin)
         {
+            System.Console.WriteLine("Made it to the update");
+            var values = GetValues(admin);
             string stm = @"UPDATE admin SET firstName = @fn, lastName = @ln, email = @email, position = @position, startdate = @sdate WHERE adminid = @id";
+
             db.Open();
-            Dictionary<string, object> fields = new Dictionary<string, object>();
-            fields.Add("@id", admin.AdminID);
-            fields.Add("@fm", admin.FirstName);
-            fields.Add("@ln", admin.LastName);
-            fields.Add("@email", admin.Email);
-            fields.Add("@id", admin.AdminID);
-            fields.Add("@position", admin.Position);
-            fields.Add("@sdate", admin.StartDate);
-            db.Update(stm, fields);
+            db.Update(stm, values);
             db.Close();
         }
 
@@ -101,6 +92,20 @@ namespace API.database
             }
             db.Close();
             return myAdmin;
+        }
+
+        public Dictionary<string, object> GetValues(Admin admin)
+        {
+            var values = new Dictionary<string, object>(){
+                {"@id", admin.AdminID},
+                {"@fn", admin.FirstName},
+                {"@ln", admin.LastName},
+                {"@email", admin.Email},
+                {"@position", admin.Position},
+                {"@sdate", admin.StartDate}
+            };
+
+            return values;
         }
     }
 }

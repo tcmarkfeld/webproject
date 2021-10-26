@@ -1,4 +1,6 @@
 using System;
+using API.database;
+using API.Interfaces;
 
 namespace API.Models
 {
@@ -14,5 +16,11 @@ namespace API.Models
         public string BillingAddress { get; set; }
         public string PastPurchases { get; set; }
         public string Status { get; set; }
+        public ICustomerDataHandler DataHandler { get; set; }
+
+        public Customer()
+        {
+            DataHandler = new CustomerDataHandler();
+        }
     }
 }

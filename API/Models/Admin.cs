@@ -1,4 +1,6 @@
 using System;
+using API.database;
+using API.Interfaces;
 
 namespace API.Models
 {
@@ -10,5 +12,11 @@ namespace API.Models
         public string Email { get; set; }
         public string Position { get; set; }
         public DateTime StartDate { get; set; } // going to run into a problem here need to either find date or change it in database
+        public IAdminDataHandler DataHandler { get; set; }
+
+        public Admin()
+        {
+            DataHandler = new AdminDataHandler();
+        }
     }
 }

@@ -36,15 +36,17 @@ namespace api.Controllers
         // POST: api/PlantInformation
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] PlantInformation value)
         {
+            value.DataHandler.Insert(value);
         }
 
         // PUT: api/PlantInformation/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] PlantInformation value)
         {
+            value.DataHandler.Update(value);
         }
 
         // DELETE: api/PlantInformation/5

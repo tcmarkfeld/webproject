@@ -64,26 +64,33 @@ namespace API.database
 
         public void Insert(Garden garden)
         {
+            var values = GetValues(garden);
             string stm = @"INSERT INTO garden(gardenid,gardentype,information) VALUES(@id,@type,@info)";
+
             db.Open();
-            Dictionary<string, object> fields = new Dictionary<string, object>();
-            fields.Add("@id", garden.GardenID);
-            fields.Add("@type", garden.GardenType);
-            fields.Add("@info", garden.Information);
-            db.Insert(stm, fields);
+            db.Insert(stm, values);
             db.Close();
         }
 
         public void Update(Garden garden)
         {
+            var values = GetValues(garden);
             string stm = @"UPDATE garden SET gardenType = @type, information = @info WHERE gardenid = @id";
+
             db.Open();
-            Dictionary<string, object> fields = new Dictionary<string, object>();
-            fields.Add("@id", garden.GardenID);
-            fields.Add("@type", garden.GardenType);
-            fields.Add("@info", garden.Information);
-            db.Update(stm, fields);
+            db.Update(stm, values);
             db.Close();
+        }
+
+        public Dictionary<string, object> GetValues(Garden garden)
+        {
+            var values = new Dictionary<string, object>(){
+                {"@id", garden.GardenID},
+                {"@type", garden.GardenType},
+                {"@info", garden.Information}
+            };
+
+            return values;
         }
     }
 }

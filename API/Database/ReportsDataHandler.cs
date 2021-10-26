@@ -20,12 +20,12 @@ namespace API.database
 
         public void Insert(Reports reports)
         {
+            var values = GetValues(reports);
+
             string stm = @"INSERT INTO reports(reportid,report_information) VALUES(@id,@info)";
+
             db.Open();
-            Dictionary<string,object> fields = new Dictionary<string, object>();
-            fields.Add("@id",reports.ReportID);
-            fields.Add("@info",reports.ReportInformation);
-            db.Insert(stm,fields);
+            db.Insert(stm, values);
             db.Close();
         }
 
@@ -52,13 +52,22 @@ namespace API.database
 
         public void Update(Reports reports)
         {
+            var values = GetValues(reports);
             string stm = @"UPDATE reports SET report_information = @info WHERE reportid = @id";
+
             db.Open();
-            Dictionary<string,object> fields = new Dictionary<string, object>();
-            fields.Add("@id",reports.ReportID);
-            fields.Add("@info",reports.ReportInformation);
-            db.Update(stm,fields);
+            db.Update(stm, values);
             db.Close();
+        }
+
+        public Dictionary<string, object> GetValues(Reports reports)
+        {
+            var values = new Dictionary<string, object>(){
+                {"@id", reports.ReportID},
+                {"@info", reports.ReportInformation}
+            };
+
+            return values;
         }
     }
 }

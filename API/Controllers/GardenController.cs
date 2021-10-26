@@ -36,15 +36,17 @@ namespace api.Controllers
         // POST: api/Garden
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Garden value)
         {
+            value.DataHandler.Insert(value);
         }
 
         // PUT: api/Garden/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Garden value)
         {
+            value.DataHandler.Update(value);
         }
 
         // DELETE: api/Garden/5

@@ -35,15 +35,17 @@ namespace api.Controllers
         // POST: api/HealthCalculator
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] HealthCalculator value)
         {
+            value.DataHandler.Insert(value);
         }
 
         // PUT: api/HealthCalculator/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] HealthCalculator value)
         {
+            value.DataHandler.Update(value);
         }
 
         // DELETE: api/HealthCalculator/5

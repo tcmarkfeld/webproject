@@ -1,4 +1,6 @@
-using System.Reflection.Metadata;
+using API.database;
+using API.Interfaces;
+
 namespace API.Models
 {
     public class PlantInformation
@@ -12,5 +14,11 @@ namespace API.Models
         public string FunFact { get; set; }
         public byte[] Picture { get; set; }
         public double Price { get; set; }
+        public IPlantInformationDataHandler DataHandler { get; set; }
+
+        public PlantInformation()
+        {
+            DataHandler = new PlantInformationDataHandler();
+        }
     }
 }
