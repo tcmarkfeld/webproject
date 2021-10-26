@@ -12,10 +12,13 @@ namespace API.database
         {
             db = new Database();
         }
-        public void Delete(Customer customer)
+        public void Delete(int id)
         {
-            string stm = $@"DELETE FROM customer WHERE customerid = {customer.CustomerID}";
+            string stm = $@"DELETE FROM customer WHERE customerid = {id}";
+
+            db.Open();
             db.Delete(stm);
+            db.Close();
         }
 
         public void Insert(Customer customer)

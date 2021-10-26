@@ -53,6 +53,8 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            ICustomerDataHandler dataHandler = new CustomerDataHandler();
+            dataHandler.Delete(id);
         }
     }
 }

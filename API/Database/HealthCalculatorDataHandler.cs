@@ -13,10 +13,13 @@ namespace API.database
         {
             db = new Database();
         }
-        public void Delete(HealthCalculator healthCalculator)
+        public void Delete(int id)
         {
-            string stm = $@"DELETE FROM healthcalculator WHERE testid = {healthCalculator.TestID}";
+            string stm = $@"DELETE FROM healthcalculator WHERE testid = {id}";
+
+            db.Open();
             db.Delete(stm);
+            db.Close();
         }
 
         public void Insert(HealthCalculator healthCalculator)

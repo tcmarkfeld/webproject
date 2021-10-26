@@ -6,7 +6,7 @@ namespace API.Interfaces
     public interface IHealthCalculatorDataHandler
     {
         public List<HealthCalculator> Select();
-        public void Delete(HealthCalculator healthCalculator);
+        public void Delete(int id);
         public void Insert(HealthCalculator healthCalculator);
         public void Update(HealthCalculator healthCalculator);
     }

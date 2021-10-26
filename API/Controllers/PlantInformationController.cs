@@ -54,6 +54,8 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            IPlantInformationDataHandler dataHandler = new PlantInformationDataHandler();
+            dataHandler.Delete(id);
         }
     }
 }

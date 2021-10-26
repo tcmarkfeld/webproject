@@ -56,10 +56,13 @@ namespace API.database
             return myGarden;
         }
 
-        public void Delete(Garden garden)
+        public void Delete(int id)
         {
-            string stm = $@"DELETE FROM garden WHERE gardenid = {garden.GardenID}";
+            string stm = $@"DELETE FROM garden WHERE gardenid = {id}";
+
+            db.Open();
             db.Delete(stm);
+            db.Close();
         }
 
         public void Insert(Garden garden)

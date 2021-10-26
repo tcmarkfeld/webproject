@@ -6,7 +6,7 @@ namespace API.Interfaces
     public interface IReportsDataHandler
     {
         public List<Reports> Select();
-        public void Delete(Reports reports);
+        public void Delete(int id);
         public void Insert(Reports reports);
         public void Update(Reports reports);
     }

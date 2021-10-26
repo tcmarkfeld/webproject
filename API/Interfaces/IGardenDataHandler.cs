@@ -7,7 +7,7 @@ namespace API.Interfaces
     {
         public List<Garden> Select();
         public List<Garden> SelectID(int id);
-        public void Delete(Garden garden);
+        public void Delete(int id);
         public void Insert(Garden garden);
         public void Update(Garden garden);
     }

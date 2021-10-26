@@ -39,10 +39,13 @@ namespace API.database
             return myAdmin;
         }
 
-        public void Delete(Admin admin)
+        public void Delete(int id)
         {
-            string stm = $@"DELETE FROM admin WHERE adminid = {admin.AdminID}";
+            string stm = $@"DELETE FROM admin WHERE adminid = {id}";
+
+            db.Open();
             db.Delete(stm);
+            db.Close();
         }
 
         public void Insert(Admin admin)
@@ -61,7 +64,9 @@ namespace API.database
         public void Update(Admin admin)
         {
             System.Console.WriteLine("Made it to the update");
+
             var values = GetValues(admin);
+
             string stm = @"UPDATE admin SET firstName = @fn, lastName = @ln, email = @email, position = @position, startdate = @sdate WHERE adminid = @id";
 
             db.Open();

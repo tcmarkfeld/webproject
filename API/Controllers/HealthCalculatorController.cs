@@ -53,6 +53,8 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            IHealthCalculatorDataHandler dataHandler = new HealthCalculatorDataHandler();
+            dataHandler.Delete(id);
         }
     }
 }
