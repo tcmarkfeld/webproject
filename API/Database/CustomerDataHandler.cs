@@ -23,7 +23,7 @@ namespace API.database
 
         public void Insert(Customer customer)
         {
-            string stm = @"INSERT INTO customer(customerid,firstname,lastname,birthdate,email,creditcard,shippingaddress,billingaddress,pastPurchases,status) VALUES(@id,@fn,@ln,@bd,@email,@cc,@sa,@ba,@pp,@status)";
+            string stm = @"INSERT INTO customer(customerid,firstname,lastname,birthdate,email,password,creditcard,shippingaddress,billingaddress,pastPurchases,status) VALUES(@id,@fn,@ln,@bd,@email,@pass,@cc,@sa,@ba,@pp,@status)";
             var values = GetValues(customer);
 
             db.Open();
@@ -48,6 +48,7 @@ namespace API.database
                     LastName = item.lastname,
                     Birthdate = item.birthdate,
                     Email = item.email,
+                    Password = item.password,
                     CreditCard = item.creditcard,
                     ShippingAddress = item.shippingaddress,
                     BillingAddress = item.billingaddress,
@@ -63,7 +64,7 @@ namespace API.database
         public void Update(Customer customer)
         {
             var values = GetValues(customer);
-            string stm = @"UPDATE customer SET firstname = @fn, lastname = @ln, birthdate = @bd, email = @email, creditcard = @cc, shippingaddress = @sa, billingaddress = @ba, pastPurchases = @pp, status = @status WHERE customerid = @id";
+            string stm = @"UPDATE customer SET firstname = @fn, lastname = @ln, birthdate = @bd, email = @email, password = @pass, creditcard = @cc, shippingaddress = @sa, billingaddress = @ba, pastPurchases = @pp, status = @status WHERE customerid = @id";
 
             db.Open();
             db.Update(stm, values);
@@ -78,6 +79,7 @@ namespace API.database
                 {"@ln", customer.LastName},
                 {"@bd", customer.Birthdate},
                 {"@email", customer.Email},
+                {"@password", customer.Password},
                 {"@cc", customer.CreditCard},
                 {"@sa", customer.ShippingAddress},
                 {"@ba", customer.BillingAddress},

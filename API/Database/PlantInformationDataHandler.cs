@@ -25,7 +25,7 @@ namespace API.database
         {
             var values = GetValues(plantInformation);
 
-            string stm = @"INSERT INTO plantinformation(plantid,plantname,location,notimeswater,sunneeds,information,funfact,picture,price) VALUES(@id,@name,@location,@water,@sun,@info,@fun,@pic,@price)";
+            string stm = @"INSERT INTO plantinformation(plantid,plantname,location,notimeswater,sunneeds,information,funfact,price) VALUES(@id,@name,@location,@water,@sun,@info,@fun,@price)";
 
             db.Open();
             db.Insert(stm, values);
@@ -51,7 +51,6 @@ namespace API.database
                     SunNeeds = item.sunneeds,
                     Information = item.information,
                     FunFact = item.funfact,
-                    Picture = item.picture,
                     Price = item.price
                 };
                 myPlant.Add(temp);
@@ -79,7 +78,6 @@ namespace API.database
                     SunNeeds = item.sunneeds,
                     Information = item.information,
                     FunFact = item.funfact,
-                    Picture = item.picture,
                     Price = item.price
                 };
                 myPlant.Add(temp);
@@ -91,7 +89,7 @@ namespace API.database
         public void Update(PlantInformation plantInformation)
         {
             var values = GetValues(plantInformation);
-            string stm = @"UPDATE plantinformation SET plantname = @name, location = @location, notimeswater = @water, sunneeds = @sun, information = @info, funfact = @fun, picture = @pic, price = @price WHERE plantid = @id";
+            string stm = @"UPDATE plantinformation SET plantname = @name, location = @location, notimeswater = @water, sunneeds = @sun, information = @info, funfact = @fun, price = @price WHERE plantid = @id";
 
             db.Open();
             db.Update(stm, values);
@@ -108,7 +106,6 @@ namespace API.database
                 {"@sun", plantInformation.SunNeeds},
                 {"@info", plantInformation.Information},
                 {"@fun", plantInformation.FunFact},
-                {"@pic", plantInformation.Picture},
                 {"@price", plantInformation.Price}
             };
 

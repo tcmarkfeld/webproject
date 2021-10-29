@@ -11,6 +11,7 @@ namespace API.Models
         public string LastName { get; set; }
         public DateTime Birthdate { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public string CreditCard { get; set; }
         public string ShippingAddress { get; set; }
         public string BillingAddress { get; set; }

@@ -30,6 +30,7 @@ namespace API.database
                     FirstName = item.firstName,
                     LastName = item.lastName,
                     Email = item.email,
+                    Password = item.password,
                     Position = item.position,
                     StartDate = item.startdate,
                 };
@@ -54,7 +55,7 @@ namespace API.database
 
             var values = GetValues(admin);
 
-            string stm = @"INSERT INTO admin(adminid,firstName,lastName,email,position,startdate) VALUES(@id,@fn,@ln,@email,@position,@sdate)";
+            string stm = @"INSERT INTO admin(adminid,firstName,lastName,email,password,position,startdate) VALUES(@id,@fn,@ln,@email,@pass,@position,@sdate)";
 
             db.Open();
             db.Insert(stm, values);
@@ -67,7 +68,7 @@ namespace API.database
 
             var values = GetValues(admin);
 
-            string stm = @"UPDATE admin SET firstName = @fn, lastName = @ln, email = @email, position = @position, startdate = @sdate WHERE adminid = @id";
+            string stm = @"UPDATE admin SET firstName = @fn, lastName = @ln, email = @email, password = @pass, position = @position, startdate = @sdate WHERE adminid = @id";
 
             db.Open();
             db.Update(stm, values);
@@ -90,6 +91,7 @@ namespace API.database
                     FirstName = item.firstName,
                     LastName = item.lastName,
                     Email = item.email,
+                    Password = item.password,
                     Position = item.position,
                     StartDate = item.startdate,
                 };
@@ -106,6 +108,7 @@ namespace API.database
                 {"@fn", admin.FirstName},
                 {"@ln", admin.LastName},
                 {"@email", admin.Email},
+                {"@pass", admin.Password},
                 {"@position", admin.Position},
                 {"@sdate", admin.StartDate}
             };
