@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Quad Landscaping & Garden</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/ElephantLogo_Transparent.png" />
+        <!-- Bootstrap icons-->
+        <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+        <link href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/root.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./adminGardens.css">
+        <link rel="stylesheet" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/customer/custGardens/custGardens.css">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/landingPage/index.html"><img src="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/admin/adminPlants/adminPlants.html">Plants</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/admin/adminGardens/adminGarden.html">Gardens</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/admin/adminReports/adminReports.html">Reports</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <li class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/admin/adminProfile/adminProfile.html">Hello {#NAME}</a></li>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder"
+                    style="font-size: 55px; letter-spacing: 1px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                    >Starting and Maintaining a Garden</h1>
+                </div>
+            </div>
+        </header>
+
+        <section id="adminEditingBtns">
+            <button class="btn btn-outline-dark" type="submit">Add</button>
+            <button class="btn btn-outline-dark" type="submit">Edit</button>
+            <button class="btn btn-outline-dark" type="submit">Delete</button>
+        </section>
+
+        <main>
+            <section class="gardens">
+            <div class="garden">
+                <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+                <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">House Plants</h2>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+
+
+            <div class="garden">
+                <img id="myImg" src="./assets/outdoorGarden2.jpg" alt="Outdoor Garden" width="300" height="200">
+                <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Outdoor Garden</h2>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+
+            <div class="garden">
+                <img id="myImg" src="./assets/outdoorGarden.jpg" alt="Industrial Garden" width="300" height="200">
+                <h2 
+                style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                >Industrial Garden</h2>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+
+            </section>
+        </main>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="adminGarden.js"></script>
+    </body>
+</html>

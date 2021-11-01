@@ -1,0 +1,110 @@
+/* 321 Project Code Begins Here */
+body {
+  background-color: #2A3033;
+  /* background-image: url('/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/background.jpg'); */
+  background-image: url('/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/BigLogo_Transparent.png');
+  background-repeat: no-repeat;
+  animation: mymove 3s;
+  background-position: 40% -10%;
+}
+@keyframes mymove {
+  from {background-position: 40% 2000%;}
+  to {background-position: 40% -10%;}
+}
+
+.display-4 {
+  margin-top: -10px;
+  font-size: 30px;
+  color: gray;
+  font-family: dekko;
+  text-align: center;
+}
+h1 {
+  padding-top: 40px;
+  font-size: 40px;
+  font-family: Verdana, Tahoma, sans-serif;    
+  text-shadow: 2px 2px black;
+  letter-spacing: 3px;
+}
+h2 > * {
+  color: white;
+  font-size: 20px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-shadow: 2px 2px black;
+}
+/* .px-4 > * {
+  margin-top: -30px;
+} */
+
+input {
+  border: 2px solid #990000;
+  border-radius: 10px;
+  background-color: #2A3033;
+  color: white;
+  text-align: center;
+}
+/* placeholder {
+  color: white;
+} */
+#navBarLogo {
+  width: 80px;
+  height: 80px;
+}
+
+.dropdown > * {
+  font-size: 20px;
+  list-style-type: none;
+}
+
+#navbarDropdown > * {
+  list-style-type: none;
+}
+
+/* sticky nav bar */
+nav > * {
+  padding-top: 40px;
+  background-color: transparent;
+  position: fixed;
+}
+
+nav:hover > *{
+  background-color: #990000;
+  transition: 0.5s;
+}
+
+.sticky {
+  background-color: #990000;
+}
+
+footer > *{
+  padding: 400px 0 150px 50px;
+}
+
+#navbarDropdown > * {
+  color: white;
+  opacity: 1.0;
+}
+.dropdown-menu  > * {
+  color: white;
+  background-color: white;
+  opacity: 1.0;
+}
+.dropdown-menu:hover  > * {
+  color: white;
+  background-color: white;
+  opacity: 1.0;
+}
+.dropdown-item:hover  > * {
+  background-color: #990000;
+  width: 80%;
+  opacity: 1.0;
+}
+.g-recaptcha {
+  padding-top: 2%;
+  padding-left: 38%;
+  padding-bottom: 2%;
+}
+
+#fields {
+  padding: 15%;
+}
