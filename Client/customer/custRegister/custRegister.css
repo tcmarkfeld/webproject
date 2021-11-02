@@ -1,15 +1,19 @@
 /* 321 Project Code Begins Here */
 body {
-  background-color: #2A3033;
+  background-color: #2a3033;
   /* background-image: url('/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/background.jpg'); */
-  background-image: url('/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/BigLogo_Transparent.png');
+  background-image: url("../../assets/BigLogo_Transparent.png");
   background-repeat: no-repeat;
   animation: mymove 3s;
   background-position: 40% -10%;
 }
 @keyframes mymove {
-  from {background-position: 40% 2000%;}
-  to {background-position: 40% -10%;}
+  from {
+    background-position: 40% 2000%;
+  }
+  to {
+    background-position: 40% -10%;
+  }
 }
 
 .display-4 {
@@ -22,7 +26,7 @@ body {
 h1 {
   padding-top: 40px;
   font-size: 40px;
-  font-family: Verdana, Tahoma, sans-serif;    
+  font-family: Verdana, Tahoma, sans-serif;
   text-shadow: 2px 2px black;
   letter-spacing: 3px;
 }
@@ -39,7 +43,7 @@ h2 > * {
 input {
   border: 2px solid #990000;
   border-radius: 10px;
-  background-color: #2A3033;
+  background-color: #2a3033;
   color: white;
   text-align: center;
 }
@@ -67,7 +71,7 @@ nav > * {
   position: fixed;
 }
 
-nav:hover > *{
+nav:hover > * {
   background-color: #990000;
   transition: 0.5s;
 }
@@ -76,28 +80,28 @@ nav:hover > *{
   background-color: #990000;
 }
 
-footer > *{
+footer > * {
   padding: 400px 0 150px 50px;
 }
 
 #navbarDropdown > * {
   color: white;
-  opacity: 1.0;
+  opacity: 1;
 }
-.dropdown-menu  > * {
+.dropdown-menu > * {
   color: white;
   background-color: white;
-  opacity: 1.0;
+  opacity: 1;
 }
-.dropdown-menu:hover  > * {
+.dropdown-menu:hover > * {
   color: white;
   background-color: white;
-  opacity: 1.0;
+  opacity: 1;
 }
-.dropdown-item:hover  > * {
+.dropdown-item:hover > * {
   background-color: #990000;
   width: 80%;
-  opacity: 1.0;
+  opacity: 1;
 }
 .g-recaptcha {
   padding-top: 2%;
