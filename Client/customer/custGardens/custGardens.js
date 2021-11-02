@@ -26,3 +26,26 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() { 
   modal.style.display = "none";
 }
+
+//Upload caption to the garden
+function handleOnLoad(id){
+  const gardenURL = `https://localhost:5001/api/garden/${id}`;
+  fetch(gardenURL).then(function(response){
+      return response.json();
+  }).then(function(json){
+      console.log(json);
+      displayTable(json)
+  }).catch(function(error){
+      console.log(error);
+  });
+}
+
+function displayTable(json){
+  var caption = document.getElementById("caption");
+  var html = "<table><tr><th>Information</th></tr>";
+  json.forEach(garden => {
+      html+=`<tr><td>${garden.information}</td></tr>`;
+  });
+  html+="</table>";
+  caption.innerHTML = html;
+}
