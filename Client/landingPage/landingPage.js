@@ -19,3 +19,33 @@
 //     stickyNav.classList.remove("sticky");
 //   }
 // }
+const GetCustomers = async (id) => {
+    const customerURL = `https://localhost:5001/api/customer/2`;
+    const response = await fetch(customerURL);
+    const data = await response.json();
+    return data;
+}
+
+function handleOnLoad(){
+
+}
+
+async function loginOnClick() {
+    await GetCustomers();
+    var email = document.getElementById("email");
+    var password = document.getElementById("pass");
+
+    console.log(data)
+    if (email=data.email)
+    {
+        if (password=data.password)
+        {
+            window.location.replace("C:\source\repos\webproject\Client\customer\custProfile\custProfile.html");
+        }
+    }
+    else{
+        console.log("error");
+        var html = "<div>Incorrect email or password. Try again</div>";
+        document.getElementById("pass").outerHTML = html
+    }
+}
