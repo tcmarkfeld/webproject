@@ -19,8 +19,8 @@
 //     stickyNav.classList.remove("sticky");
 //   }
 // }
-const GetCustomers = async (id) => {
-    const customerURL = `https://localhost:5001/api/customer/2`;
+const GetCustomers = async (email) => {
+    const customerURL = `https://localhost:5001/api/customer/${email}`;
     const response = await fetch(customerURL);
     const data = await response.json();
     return data;
