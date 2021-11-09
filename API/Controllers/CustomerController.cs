@@ -24,12 +24,13 @@ namespace api.Controllers
             return dataHandler.Select();
         }
 
-        // GET: api/Customer/5
+        // GET: api/Customer/email
         [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetCustomer")]
-        public string Get(int id)
+        [HttpGet("{email}", Name = "GetCustomer")]
+        public string Get(string email)
         {
-            return "value";
+            ICustomerDataHandler dataHandler = new CustomerDataHandler();
+            return dataHandler.SelectEmail(email);
         }
 
         // POST: api/Customer

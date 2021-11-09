@@ -61,6 +61,36 @@ namespace API.database
             return myCustomer;
         }
 
+        public List<Customer> SelectEmail(string email)
+        {
+            List<Customer> myCustomer = new List<Customer>();
+
+            string stm = $@"SELECT * from customer where email = {email}";
+            db.Open();
+            List<ExpandoObject> results = db.Select(stm);
+
+            foreach (dynamic item in results)
+            {
+                Customer temp = new Customer()
+                {
+                    CustomerID = item.customerid,
+                    FirstName = item.firstname,
+                    LastName = item.lastname,
+                    Birthdate = item.birthdate,
+                    Email = item.email,
+                    Password = item.password,
+                    CreditCard = item.creditcard,
+                    ShippingAddress = item.shippingaddress,
+                    BillingAddress = item.billingaddress,
+                    PastPurchases = item.pastPurchases,
+                    Status = item.status
+                };
+                myCustomer.Add(temp);
+            }
+            db.Close();
+            return myCustomer;
+        }
+
         public void Update(Customer customer)
         {
             var values = GetValues(customer);

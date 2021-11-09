@@ -30,7 +30,7 @@ function handleOnLoad(){
 
 }
 
-async function loginOnClick() {
+async function loginOnClick(json) {
     await GetCustomers();
     var email = document.getElementById("email");
     var password = document.getElementById("pass");
