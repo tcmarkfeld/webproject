@@ -23,17 +23,26 @@ const GetCustomers = async (email) => {
     const customerURL = `https://localhost:5001/api/customer/${email}`;
     const response = await fetch(customerURL);
     const data = await response.json();
+    console.log(data);
+    loginOnClick(data)
     return data;
 }
 
 function handleOnLoad(){
-
+    const postURL = "https://localhost:5001/api/customer";
+    fetch(postURL).then(function(response){
+        return response.json();
+    }).then(function(json){
+        console.log(json);
+        loginOnClick(json)
+    }).catch(function(error){
+        console.log(error);
+    });
 }
 
-async function loginOnClick(json) {
-    await GetCustomers();
-    var email = document.getElementById("email");
-    var password = document.getElementById("pass");
+async function loginOnClick(data) {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("pass").value;
 
     console.log(data)
     if (email=data.email)
