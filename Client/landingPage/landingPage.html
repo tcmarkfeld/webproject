@@ -43,11 +43,11 @@
                     <!-- returning customer log in -->
                     <h1>Log In</h1>
                     <h2><a class="createAcct" href="../customer/custRegister/custRegister.html">Create an account</a></h2>
-
-                    <form action="">
-                        <input type="text" id="fname" name="fname" placeholder="Email"><br><br>
-                        <input type="text" id="lname" name="lname" placeholder="Password"><br><br>
-                        <input type="submit" value="Submit">
+                    <!-- action="../customer/custProfile/custProfile.html" -->
+                    <form>
+                        <input type="text" id="email" name="email" placeholder="Email"><br><br>
+                        <input type="password" id="pass" name="password" placeholder="Password"><br><br>
+                        <button type="button" class="btn btn-secondary btn-small" onclick="GetCustomers(document.getElementById('email').value)">Submit</button>
                     </form>
                     
                     <h2><a href="../admin/adminLogIn/index.html">Log in as admin</a></h2>
