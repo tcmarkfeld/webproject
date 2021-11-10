@@ -28,26 +28,30 @@ const GetCustomers = async (email) => {
     return data;
 }
 
-function handleOnLoad(){
-    const postURL = "https://localhost:5001/api/customer";
+function handleOnLoad(email){
+    const postURL = `https://localhost:5001/api/customer/${email}`;
     fetch(postURL).then(function(response){
         return response.json();
     }).then(function(json){
         console.log(json);
-        loginOnClick(json)
+        loginOnClick(json);
     }).catch(function(error){
         console.log(error);
     });
 }
 
-async function loginOnClick(data) {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("pass").value;
+async function loginOnClick(json) {
+    var emailval = document.getElementById("email").value;
+    var pass = document.getElementById("pass").value;
+    var obj = JSON.parse(json)
+    console.log(emailval);
+    console.log(pass);
+    console.log(json);
 
-    console.log(data)
-    if (email=data.email)
+    console.log(obj.email)
+    if (emailval=obj.email)
     {
-        if (password=data.password)
+        if (pass=obj.password)
         {
             window.location.replace("C:\source\repos\webproject\Client\customer\custProfile\custProfile.html");
         }

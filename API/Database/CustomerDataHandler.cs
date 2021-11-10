@@ -65,7 +65,8 @@ namespace API.database
         {
             List<Customer> myCustomer = new List<Customer>();
 
-            string stm = $@"SELECT * from customer where email = {email}";
+            string stm = $@"SELECT * from customer where email = '{email}'";
+
             db.Open();
             List<ExpandoObject> results = db.Select(stm);
 

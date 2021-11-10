@@ -27,7 +27,7 @@ namespace api.Controllers
         // GET: api/Customer/email
         [EnableCors("OpenPolicy")]
         [HttpGet("{email}", Name = "GetCustomer")]
-        public List<Customer> Get([FromBody] string email)
+        public List<Customer> Get(string email)
         {
             ICustomerDataHandler dataHandler = new CustomerDataHandler();
             return dataHandler.SelectEmail(email);
