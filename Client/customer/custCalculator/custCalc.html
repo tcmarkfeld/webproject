@@ -13,7 +13,7 @@
         <link href="../../root.css" rel="stylesheet" />
         <link rel="stylesheet" href="./custCalc.css">
     </head>
-    <body>
+    <body onload="handleHello()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container px-4 px-lg-5">
@@ -31,7 +31,7 @@
                           Cart
                           <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                       </button>
-                      <li class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
+                      <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
                   </form>
               </div>
           </div>

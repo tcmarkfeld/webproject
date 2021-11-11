@@ -13,7 +13,7 @@
         <link href="../../root.css" rel="stylesheet" />
         <link rel="stylesheet" href="./custGardens.css">
     </head>
-    <body>
+    <body onload="handleHello()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -31,7 +31,7 @@
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
-                        <li class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
+                        <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
                     </form>
                 </div>
             </div>
@@ -47,10 +47,28 @@
         <main>
             <section class="gardens">
             <div class="garden">
-                <img id="myImg1" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+                <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
                 <h2>House Plants</h2>
             </div>
             <!-- The Modal -->
+            <!-- <div class="modal" tabindex="-1" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">House Plants</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+                    <p id="body">Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div> -->
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
@@ -60,7 +78,7 @@
 
 
             <div class="garden">
-                <img id="myImg2" src="./assets/outdoorGarden.jpg" alt="Outdoor Garden" width="300" height="200">
+                <img id="myImg" src="./assets/outdoorgarden.jpg" alt="Outdoor Garden" width="300" height="200">
                 <h2>Outdoor Garden</h2>
             </div>
             <!-- The Modal -->
@@ -72,7 +90,7 @@
             </div>
 
             <div class="garden">
-                <img id="myImg3" src="./assets/industGarden.jpg" alt="Industrial Garden" width="300" height="200">
+                <img id="myImg" src="./assets/industrialgarden.jpg" alt="Industrial Garden" width="300" height="200">
                 <h2>Industrial Garden</h2>
             </div>
             <!-- The Modal -->

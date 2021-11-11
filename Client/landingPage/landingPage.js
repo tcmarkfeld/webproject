@@ -43,21 +43,20 @@ function handleOnLoad(email){
 async function loginOnClick(json) {
     var emailval = document.getElementById("email").value;
     var pass = document.getElementById("pass").value;
-    console.log(json);
-    //const obj = await JSON.parse(json)
-    console.log(emailval);
-    console.log(pass);
 
-    console.log(json.email)
-    if (emailval=json.email)
-    {
-        if (pass=json.password)
+    try{
+        if (emailval=json[0].email)
         {
-            window.location.replace("C:\source\repos\webproject\Client\customer\custProfile\custProfile.html");
+            if (pass=json[0].password)
+            {
+                var user = json[0];
+                sessionStorage.setItem('user', JSON.stringify(user));
+
+                window.location.replace("../customer/custProfile/custProfile.html");
+            }
         }
     }
-    else{
-        console.log("error");
+    catch{
         var html = "<input type='password' id='pass' name='password' placeholder='Password'><br><br><div style='color: red'>Incorrect email or password. Try again</div>";
         document.getElementById("pass").outerHTML = html
     }

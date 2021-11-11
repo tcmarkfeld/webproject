@@ -26,3 +26,12 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() { 
   modal.style.display = "none";
 }
+
+const obj = JSON.parse(sessionStorage.getItem('user'));
+console.log(obj);
+
+function handleHello(){
+    var helloHtml = document.getElementById('hello');
+    var html = `<li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello ${obj.firstName}</a></li>`;
+    helloHtml.innerHTML = html;
+}
