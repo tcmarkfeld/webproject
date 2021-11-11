@@ -26,11 +26,11 @@ namespace api.Controllers
 
         // GET: api/Admin/5
         [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetAdmin")]
-        public List<Admin> Get(int id)
+        [HttpGet("{email}", Name = "GetAdmin")]
+        public List<Admin> Get(string email)
         {
             IAdminDataHandler dataHandler = new AdminDataHandler();
-            return dataHandler.SelectID(id);
+            return dataHandler.SelectEmail(email);
         }
 
         // POST: api/Admin

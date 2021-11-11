@@ -75,11 +75,11 @@ namespace API.database
             db.Close();
         }
 
-        public List<Admin> SelectID(int id)
+        public List<Admin> SelectEmail(string email)
         {
             List<Admin> myAdmin = new List<Admin>();
 
-            string stm = @"SELECT * from admin where adminid = '" + id + "'";
+            string stm = @"SELECT * from admin where email = '" + email + "'";
             db.Open();
             List<ExpandoObject> results = db.Select(stm);
 
