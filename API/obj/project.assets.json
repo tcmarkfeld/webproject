@@ -7413,19 +7413,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/katemelvin/.nuget/packages/": {}
+    "C:\\Users\\timma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/katemelvin/Desktop/school/Classes/MIS321/repos/webproject/API/api.csproj",
+      "projectUniqueName": "C:\\source\\repos\\webproject\\api\\api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/katemelvin/Desktop/school/Classes/MIS321/repos/webproject/API/api.csproj",
-      "packagesPath": "/Users/katemelvin/.nuget/packages/",
-      "outputPath": "/Users/katemelvin/Desktop/school/Classes/MIS321/repos/webproject/API/obj/",
+      "projectPath": "C:\\source\\repos\\webproject\\api\\api.csproj",
+      "packagesPath": "C:\\Users\\timma\\.nuget\\packages\\",
+      "outputPath": "C:\\source\\repos\\webproject\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/katemelvin/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\timma\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -7484,7 +7484,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
