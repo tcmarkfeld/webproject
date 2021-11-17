@@ -5,6 +5,7 @@ body {
   #navBarLogo {
     width: 80px;
     height: 80px;
+    margin-left: 8%;
   }
   
   .dropdown {
@@ -17,34 +18,19 @@ body {
   }
   
   /* sticky nav bar */
-  nav > * {
-    padding-top: 50px;
+  /* nav > * {
+
+  } */
+
+#logIn {
+    padding-left: 70%;
+    font-size: 23px;
+    color: white;
   }
   
   nav:hover > * {
     background-color: #990000;
     transition: 0.5s;
-  }
-
-  
-  #navbarDropdown {
-    color: white;
-    opacity: 1;
-  }
-  .dropdown-menu {
-    color: white;
-    background-color: white;
-    opacity: 1;
-  }
-  .dropdown-menu:hover {
-    color: white;
-    background-color: white;
-    opacity: 1;
-  }
-  .dropdown-item:hover {
-    background-color: #990000;
-    width: 80%;
-    opacity: 1;
   }
 
   #myCarousel {
