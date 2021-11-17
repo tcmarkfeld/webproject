@@ -52,38 +52,77 @@
         <main>
             <section class="gardens">
             <div class="garden">
-                <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+                <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200" onclick="GetGarden(1)">
                 <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">House Plants</h2>
             </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(1)">
+            <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+        </button>
+  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">House Plants</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
+                    <div id="gardeninfo"></div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <!-- <div id="myModal" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
                 <div id="caption"></div>
-            </div>
+            </div> -->
 
 
-            <div class="garden">
-                <img id="myImg" src="./assets/outdoorGarden2.jpg" alt="Outdoor Garden" width="300" height="200">
+            <div class="garden" id="garden">
+                <img id="myImg" src="./assets/outdoorgarden.jpg" alt="Outdoor Garden" width="300" height="200">
                 <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Outdoor Garden</h2>
             </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-            </div>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="myImg" src="./assets/outdoorgarden.jpg" alt="Outdoor Garden" width="300" height="200">
+                      <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
             <div class="garden">
-                <img id="myImg" src="./assets/outdoorGarden.jpg" alt="Industrial Garden" width="300" height="200">
+                <img id="myImg" src="./assets/industrialgarden.jpg" alt="Industrial Garden" width="300" height="200" onclick="GetGarden(3)">
                 <h2 
                 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
                 >Industrial Garden</h2>
             </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal3" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
+                <div id ="info"></div>
                 <div id="caption"></div>
             </div>
 
