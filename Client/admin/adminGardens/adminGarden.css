@@ -11,9 +11,9 @@
 .modal-backdrop {
   display: none;
 }
-.modal {
+/* .modal {
   background: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .garden {
   text-align: center;
@@ -23,4 +23,9 @@
 .gardenText {
   position: relative;
   top: -5px;
+}
+
+.modalButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

@@ -6,10 +6,6 @@ const GetGarden = async (id) => {
   return data;
 }
 
-// function loadModal(){
-// $( "#exampleModal" ).load( "modal.html" );
-// }
-
 function displayModal(data){
   console.log(data);
   var garden = document.getElementById("exampleModal");
@@ -19,6 +15,7 @@ function displayModal(data){
   html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button>`;
   html += `</div></div></div></div>`;
   garden.innerHTML = html;
+  //$('.modal-backdrop').remove();
 }
 
 
