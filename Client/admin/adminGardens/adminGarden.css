@@ -12,12 +12,31 @@ body.modal {
   overflow: visible;
 }
 
+.modal-dialog {
+  overflow-y: initial;
+}
+
+.modal-body {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.modal-lg {
+  display: block;
+  width: 500px;
+}
+
+@media (max-height: 400px) {
+  .modal {
+    /* display: block; */
+    margin-top: 0;
+    top: 0;
+  }
+}
+
 .modal-backdrop {
   display: none;
 }
-/* .modal {
-  background: rgba(0, 0, 0, 0.5);
-} */
 
 .garden {
   text-align: center;

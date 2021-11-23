@@ -51,6 +51,26 @@
             <button class="btn btn-outline-dark" type="submit">Delete</button>
         </section>
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sweetshrub</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="myImg" src="./assets/plant-1.jpeg" alt="House Plants" width="300" height="200"/>
+                    <div id="gardeninfo"></div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
@@ -58,8 +78,8 @@
 
                     <div class="col mb-5">
                         <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="./assets/sweetshrub.jpeg" alt="Sweetshrub" height="230px"/>
+                            <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(1)">
+                                <img class="card-img-top" src="./assets/plant-1.jpeg" alt="Sweetshrub" height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -71,17 +91,19 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
                             </div>
+                            </button>
                         </div>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(2)">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/beeBalm.jpeg" alt="Bee Balm" height="230px" />
+                            <img class="card-img-top" src="./assets/plant-2.jpeg" alt="Bee Balm" height="230px" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -105,14 +127,16 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(3)">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/swampAzalea.jpeg" alt="Swamp Azalea" height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-3.jpeg" alt="Swamp Azalea" height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -128,12 +152,14 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(4)">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/crimsoneyedRosemallow.jpeg" alt="Crimsoneyed Rosemallow" height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-4.jpeg" alt="Crimsoneyed Rosemallow" height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -156,21 +182,23 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(5)">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/rose.jpeg" alt="..." height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-5.jpeg" alt="..." height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Another Plant</h5>
+                                    <h5 class="fw-bolder">Coneflowers</h5>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
+                                    <span class="text-muted text-decoration-line-through">$14.99</span>
                                     $25.00
                                 </div>
                             </div>
@@ -179,19 +207,21 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(6)">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/rose.jpeg" alt="..." height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-6.jpg" alt="..." height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Another Plant</h5>
+                                    <h5 class="fw-bolder">Helenium</h5>
                                     <!-- Product price-->
-                                    $120.00 - $280.00
+                                    $14.99
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -199,19 +229,21 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(7)">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/rose.jpeg" alt="..." height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-7.jpg" alt="..." height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Another Plant</h5>
+                                    <h5 class="fw-bolder">Hibiscus</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
@@ -221,7 +253,7 @@
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
+                                    <span class="text-muted text-decoration-line-through">$29.99</span>
                                     $18.00
                                 </div>
                             </div>
@@ -230,17 +262,19 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
 
                     <div class="col mb-5">
+                        <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(8)">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="./assets/rose.jpeg" alt="..." height="230px"/>
+                            <img class="card-img-top" src="./assets/plant-8.jpg" alt="..." height="230px"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder">Another Plant</h5>
+                                    <h5 class="fw-bolder">Purple Jasmine</h5>
                                     <!-- Product reviews-->
                                     <div class="d-flex justify-content-center small text-warning mb-2">
                                         <div class="bi-star-fill"></div>
@@ -250,7 +284,7 @@
                                         <div class="bi-star-fill"></div>
                                     </div>
                                     <!-- Product price-->
-                                    $40.00
+                                    $24.99
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -258,6 +292,7 @@
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
                         </div>
+                    </button>
                     </div>
                 </div>
             </div>
