@@ -4,9 +4,12 @@
   justify-content: space-evenly;
 }
 
-.exampleModal {
+/* .exampleModal {
   z-index: auto;
-}
+  overflow-y: scroll !important;
+  margin: 0 auto !important;
+  position: static !important;
+} */
 
 body.modal {
   overflow: visible;
@@ -28,9 +31,10 @@ body.modal {
 
 @media (max-height: 400px) {
   .modal {
-    /* display: block; */
-    margin-top: 0;
-    top: 0;
+    z-index: 1;
+    overflow-y: scroll !important;
+    margin: 0 auto !important;
+    position: static !important;
   }
 }
 

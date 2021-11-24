@@ -11804,9 +11804,10 @@ fieldset:disabled .btn {
   flex-direction: column;
   margin-left: 35%;
   margin-right: 35%;
-  margin-bottom: 8%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
-  /* justify-content: center;
+/* justify-content: center;
 } */
 .report {
   margin: 3%;

@@ -4791,6 +4791,7 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 450px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -5797,9 +5798,9 @@ fieldset:disabled .btn {
   align-items: center;
   margin: auto;
   margin-bottom: 45px;
-  /* margin-left: auto; */
-  float: inline-start;
-  height: 650px;
+  margin-right: 10px;
+  /* float: inline-start; */
+  height: 550px;
   width: 300px;
 }
 
@@ -11774,6 +11775,8 @@ footer > * {
   font-size: 15px;
 }
 .col {
+  margin-top: 40px;
+  height: 500px;
   width: 20%;
 }
 

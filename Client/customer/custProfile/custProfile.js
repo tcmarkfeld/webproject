@@ -8,15 +8,6 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
 console.log(obj);
 
-// const GetCustomers = async (id) => {
-//     const customerURL = `https://localhost:5001/api/customer/${id}`;
-//     const response = await fetch(customerURL);
-//     const data = await response.json();
-//     console.log(data);
-//     populateFields(data);
-//     return data;
-// }
-
 function populateFields(){
     var main = document.getElementById("mainImage");
     var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${obj.firstName}</span><span class="text-black-50">${obj.email}</span><span> </span></div>`

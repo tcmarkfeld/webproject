@@ -724,6 +724,8 @@ progress {
 
 .col {
   flex: 1 0 0%;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-cols-auto > * {
@@ -4788,7 +4790,7 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  width: 300px;
+  height: 450px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -5826,7 +5828,11 @@ fieldset:disabled .btn {
 .modalButton {
   display: flex;
   align-items: center;
-  height: 650px;
+  margin: auto;
+  margin-bottom: 45px;
+  margin-right: 10px;
+  /* float: inline-start; */
+  height: 550px;
   width: 300px;
 }
 
@@ -11768,11 +11774,13 @@ footer > * {
   margin: 0 550px 100px 550px;
 }
 .col {
+  margin-top: 40px;
+  height: 500px;
   width: 20%;
 }
 
 .fw-bolder {
-  font-size: 38px;
+  font-size: 32px;
 }
 /* 321 Project Code Begins Here */
 #navBarLogo {
