@@ -724,6 +724,8 @@ progress {
 
 .col {
   flex: 1 0 0%;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-cols-auto > * {
@@ -5788,6 +5790,22 @@ fieldset:disabled .btn {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+}
+
+.modalButton {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 45px;
+  /* margin-left: auto; */
+  float: inline-start;
+  height: 650px;
+  width: 300px;
+}
+
+.modalButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal-dialog {
@@ -11753,11 +11771,12 @@ footer > * {
 .suggestions {
   text-align: center;
   margin: 0 550px 100px 550px;
+  font-size: 15px;
 }
 .col {
   width: 20%;
 }
 
 .fw-bolder {
-  font-size: 38px;
+  font-size: 32px;
 }
