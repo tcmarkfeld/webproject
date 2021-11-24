@@ -11430,8 +11430,8 @@ textarea.form-control-lg {
 
 .reports {
   display: flex;
-  justify-content: center;  
-}
-.report {
-  margin: 3%;
+  flex-direction: column;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-bottom: 8%;
 }

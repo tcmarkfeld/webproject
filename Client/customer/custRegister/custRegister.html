@@ -23,7 +23,7 @@
                 
                 <!-- log in nav button -->
                 <li class="nav-item dropdown" style="list-style-type: none;">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">Get Started</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Get Started</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="../../landingPage/landingPage.html">Returning Customer</a></li>
                         <li><a class="dropdown-item" href="../custRegister/custRegister.html">New Customer</a></li>
@@ -41,7 +41,7 @@
                     <!-- <h1 class="display-4 fw-bolder">Quad Landscaping & Garden</h1> -->
                     
                     <!-- customer registration -->
-                    <h1>Register</h1>
+                    <h1 class="reg">Register</h1>
 
                     <form action="">
                         <input type="text" id="fname" name="fname" placeholder="First Name">
@@ -51,12 +51,14 @@
                         <input type="text" id="password" name="password" placeholder="Password"><br><br>
                         
                         <!-- subscribe button -->
-                        <input type="radio" name="subscribeToEmails" value="subscribeToEmails" id="subscribeToEmails">
+                        <input type="radio" checked="checked" name="subscribeToEmails" value="subscribeToEmails" id="subscribeToEmails">
                         <label for="subscribeToEmails">Subscribe To Emails</label>
                         <br>
                         <!-- terms and conditions -->
                         <input type="radio" name="termsAndCond" value="termsAndCond" id="termsAndCond">
-                        <label for="termsAndCond">Terms and Conditions</label>
+                        <a href="./assets/QL&G Terms & Conditions.pdf" target="_blank" download>
+                            <label>Terms and Conditions</label>
+                        </a>
                         <!-- recaptcha -->
                         <form action="?" method="POST">
                             <div class="g-recaptcha" data-sitekey="your_site_key"></div>
@@ -70,8 +72,8 @@
         </header>
 
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
+        <footer class="footer">
+            <div><p class="text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

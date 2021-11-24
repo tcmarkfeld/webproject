@@ -1,18 +1,17 @@
 /* 321 Project Code Begins Here */
 body {
   background-color: #2a3033;
-  /* background-image: url('/Users/katemelvin/Desktop/school/Classes/MIS321/repos/a321proj/assets/background.jpg'); */
   background-image: url("../../assets/BigLogo_Transparent.png");
   background-repeat: no-repeat;
   animation: mymove 3s;
-  background-position: 40% -10%;
+  background-position: 40% 10%;
 }
 @keyframes mymove {
   from {
     background-position: 40% 2000%;
   }
   to {
-    background-position: 40% -10%;
+    background-position: 40% 10%;
   }
 }
 
@@ -25,10 +24,14 @@ body {
 }
 h1 {
   padding-top: 40px;
-  font-size: 40px;
+  font-size: 30px;
   font-family: Verdana, Tahoma, sans-serif;
   text-shadow: 2px 2px black;
   letter-spacing: 3px;
+}
+.reg {
+  padding-top: 90px;
+  padding-bottom: 40px;
 }
 h2 > * {
   color: white;
@@ -46,6 +49,7 @@ input {
   background-color: #2a3033;
   color: white;
   text-align: center;
+  margin: 7px;
 }
 /* placeholder {
   color: white;
@@ -66,7 +70,7 @@ input {
 
 /* sticky nav bar */
 nav > * {
-  padding-top: 40px;
+  /* padding-top: 40px; */
   background-color: transparent;
   position: fixed;
 }
@@ -80,8 +84,12 @@ nav:hover > * {
   background-color: #990000;
 }
 
-footer > * {
-  padding: 400px 0 150px 50px;
+/* footer > * {
+  padding: 100px 0 50px 50px;
+} */
+.footer {
+  padding-top: 170px;
+  justify-content: center;
 }
 
 #navbarDropdown > * {
@@ -110,5 +118,5 @@ footer > * {
 }
 
 #fields {
-  padding: 15%;
+  padding: 20%;
 }
