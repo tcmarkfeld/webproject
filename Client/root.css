@@ -4318,6 +4318,7 @@ fieldset:disabled .btn {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+  width: 200%;
 }
 .navbar-brand {
   padding-top: 0.3125rem;

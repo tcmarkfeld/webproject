@@ -44,61 +44,49 @@
                 </div>
             </div>
         </header>
+        
         <main>
             <section class="gardens">
             <div class="garden">
-                <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
-                <h2>House Plants</h2>
+                <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(1)">
+                    <img id="myImg" src="./assets/garden-1.jpg" alt="House Plants" width="300" height="200"/>
+                    <h3 class="gardenText">House Plants</h3>
+                </button>
             </div>
-            <!-- The Modal -->
-            <!-- <div class="modal" tabindex="-1" id="myModal">
-            <div class="modal-dialog">
+
+            <div class="garden" id="garden">
+                <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(2)">
+                    <img id="myImg" src="./assets/garden-2.jpg" alt="House Plants" width="300" height="200"/>
+                    <h3 class="gardenText">Outdoor Garden</h3>
+                </button>
+            </div>
+            
+
+            <div class="garden">
+                <button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(3)">
+                    <img id="myImg" src="./assets/garden-3.jpg" alt="House Plants" width="300" height="200"/>
+                    <h3 class="gardenText">Industrial Garden</h3>
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="overflow-y: scroll">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">House Plants</h5>
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">House Plants</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="myImg" src="./assets/housePlants.jpg" alt="House Plants" width="300" height="200">
-                    <p id="body">Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
+                    </div>
+                    <div class="modal-body">
+                        <img id="myImg" src="./assets/garden-1.jpg" alt="House Plants" width="300" height="200"/>
+                        <div id="gardeninfo"></div>
+                    </div>
+                    <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </div>
                 </div>
-            </div>
-            </div> -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-                <div id="info"></div>
-            </div>
-
-
-            <div class="garden">
-                <img id="myImg" src="./assets/outdoorgarden.jpg" alt="Outdoor Garden" width="300" height="200">
-                <h2>Outdoor Garden</h2>
-            </div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-                <div id="info"></div>
-            </div>
-
-            <div class="garden">
-                <img id="myImg" src="./assets/industrialgarden.jpg" alt="Industrial Garden" width="300" height="200">
-                <h2>Industrial Garden</h2>
-            </div>
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="img01">
-                <div id="caption"></div>
-                <div id="info"></div>
             </div>
 
             </section>
