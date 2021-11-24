@@ -13,7 +13,7 @@
        <link href="../../root.css" rel="stylesheet" />
        <link rel="stylesheet" href="./custPlants.css">
    </head>
-    <body onload="handleHello()">
+    <body onload="handleHello(), getCart()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -26,10 +26,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
+                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="cartModal()">
+                        <!-- <button class="btn btn-outline-dark" type="submit"> -->
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span id="cartNum" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
                     </form>
@@ -60,11 +61,30 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add to Cart</button>
+                <button type="button" class="btn btn-primary" onclick="GetPlantCart(1)">Add to Cart</button>
                 </div>
             </div>
             </div>
         </div>
+
+        <!--CART MODAL-->
+        <div class="modal" tabindex="-1" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <!-- Section-->
         <section class="py-5">
@@ -86,7 +106,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(1)">Add to Cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -119,7 +139,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(2)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +164,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(3)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -174,7 +194,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(4)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -199,7 +219,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(5)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -221,7 +241,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to Cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(6)">Add to Cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -254,7 +274,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(7)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -284,7 +304,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="GetPlantCart(8)">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
