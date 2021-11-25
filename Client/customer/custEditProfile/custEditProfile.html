@@ -11,7 +11,7 @@
         <!-- Bootstrap icons-->
         <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
         <link href="../../root.css" rel="stylesheet" />
-        <link rel="stylesheet" href="./custProfile.css">
+        <link rel="stylesheet" href="./custEditProfile.css">
     </head>
     <body onload="populateFields()">
         <!-- Navigation-->
@@ -44,20 +44,18 @@
                 <div class="col-md-5 border-right">
                     <div class="p-3 py-5">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Your Profile Settings</h4>
+                            <h4 class="text-right">Edit Your Profile Settings</h4>
                         </div>
                         <div class="row mt-2">
-                            <div id="fname" class="col-md-6"><label class="labels">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>John</span></div>
-                            <div id="lname" class="col-md-6"><label class="labels">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>Smith</span></div>
+                            <div id="fname" class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                            <div id="lname" class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="last name"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>(205)-443-8739</span></div>
-                            <div class="col-md-12"><label class="labels">Address Line 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>382 Piedmont Road, Tuscaloosa, Alabama</span></div>
-                            <!-- <div class="col-md-12"><label class="labels">Address Line 2:&nbsp;&nbsp;&nbsp;</label><span>N/A</span></div> -->
-                            <div class="col-md-12"><label class="labels">Postcode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>35401</span></div>
-                            <div class="col-md-12" id="email"><label class="labels">Email Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>jsmith@crimson.ua.edu</span></div>
-                        </div>
-                        <br><div><a href="../custEditProfile/custEditProfile.html" class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></a></div>
+                            <div class="col-md-12"><label class="labels">Phone Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                            <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                            <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="postcode" value=""></div>
+                            <div class="col-md-12" id="email"><label class="labels">Email Address</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                     </div>
                 </div>
             </div>
