@@ -44,7 +44,8 @@ async function addToCart(data){
     
 	console.log(cart);
 	sessionStorage.setItem("myCart", JSON.stringify(cart));
-    cartHtml.innerHTML = JSON.parse(sessionStorage.length);
+    cartHtml.innerHTML = sessionStorage.length;
+    console.log(sessionStorage.length)
     console.log(sessionStorage.getItem('myCart'))
 }
 
