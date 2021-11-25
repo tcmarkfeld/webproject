@@ -27,7 +27,6 @@ function displayModal(data){
 
 function getSlider(value, oldValue){
   console.log(oldValue);
-  // var slider = document.getElementById("myRange");
   var garden = document.getElementById(`modalButton-${oldValue}`);
   garden.classList.remove('selected');
   displayGarden(value);

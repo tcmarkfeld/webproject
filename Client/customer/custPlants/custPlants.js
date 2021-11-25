@@ -29,7 +29,7 @@ const GetPlantCart = async (id) => {
     const plantURL = `https://localhost:5001/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
     const data = await response.json();
-    addToCart(data);
+    addProduct(data);
     return data;
 }
 
@@ -43,39 +43,58 @@ async function addToCart(data){
 	alert(productName + " has successfully been added to your cart");
     
 	console.log(cart);
-	sessionStorage.setItem("myCart", JSON.stringify(cart));
-    cartHtml.innerHTML = sessionStorage.length;
-    console.log(sessionStorage.length)
-    console.log(sessionStorage.getItem('myCart'))
+	localStorage.setItem("myCart", cart);
+    cartHtml.innerHTML = localStorage.length;
+    console.log(localStorage.getItem('myCart').length + " addToCart method")
+    console.log(localStorage.getItem('myCart'))
+}
+
+function addProduct(data){
+    let products = [];
+    if(localStorage.getItem('myCart')){
+        products = JSON.parse(localStorage.getItem('myCart'));
+    }
+    products.push({'Plant Name' : data[0].plantName, 'Price' : data[0].price});
+    localStorage.setItem('myCart', JSON.stringify(products));
+
+    alert(data[0].plantName + " has successfully been added to your cart");
 }
 
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
-	var test = sessionStorage.getItem("myCart");
-	console.log(JSON.parse(test));
-    cartHtml.innerHTML = JSON.parse(sessionStorage.length);
+	try {
+        var test = localStorage.getItem("myCart");
+        console.log(JSON.parse(test) + " getCart method");
+        cartHtml.innerHTML = localStorage.length;
+    } catch (error) {
+        cartHtml.innerHTML = '0';
+    }
+    // if (JSON.parse(test) == 0 || JSON.parse(test) == null){
+        
+    // }
+    // else{
+    //     console.log(localStorage.length)
+    //     cartHtml.innerHTML = localStorage.length;
+    // }
 }
 
 function clearCart(){
-	sessionStorage.removeItem("myCart");
+	localStorage.removeItem("myCart");
+}
+
+function removeProduct(productId){
+    let storageProducts = JSON.parse(localStorage.getItem('products'));
+    let products = storageProducts.filter(product => product.productId !== productId );
+    localStorage.setItem('products', JSON.stringify(products));
 }
 
 function cartModal(){
-	var cart = JSON.parse(sessionStorage.getItem("myCart"));
-    console.log(cart);
-
+	var cart = JSON.parse(localStorage.getItem("myCart"));
+    console.log(cart + " cartModal method");
     html = `<div class="modal-dialog"><div class="modal-content">`
     html += `<div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
     html += `</div><div class="modal-body"><p>${cart.toString()}</p></div><div class="modal-footer">`
     html += `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div></div>`
-          
-	// var content='';
-	// for (var key in cart) {
-	// 	var name = key; //B
-	// 	var price = cart[key];	 //15
-	//  	content += '<tr><td>'+name+'</td><td>'+price+'</td></tr>';
-	// }
-
 	document.getElementById("cartModal").innerHTML = html;
 
 }
