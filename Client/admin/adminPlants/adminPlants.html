@@ -44,11 +44,11 @@
                 </div>
             </div>
         </header>
-
+        <!-- Add, Edit and Delete Buttons-->
         <section class="adminEditingBtns">
-            <button class="btn btn-outline-dark" type="submit">Add</button>
-            <button class="btn btn-outline-dark" type="submit">Edit</button>
-            <button class="btn btn-outline-dark" type="submit">Delete</button>
+            <button id = "adminAdd" class="btn btn-outline-dark" type="submit">Add</button>
+            <button id = "adminEdit" class="btn btn-outline-dark" type="submit">Edit</button>
+            <button id = "adminDelete" class="btn btn-outline-dark" type="submit">Delete</button>
         </section>
 
         <!-- Modal -->
@@ -61,7 +61,9 @@
                 </div>
                 <div class="modal-body">
                     <img id="myImg" src="./assets/plant-1.jpeg" alt="House Plants" width="300" height="200"/>
-                    <div id="gardeninfo"></div>
+                    <div id="gardeninfo">
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
