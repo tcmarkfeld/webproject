@@ -25,7 +25,7 @@ namespace API.database
         {
             var values = GetValues(plantInformation);
 
-            string stm = @"INSERT INTO plantinformation(plantid,plantname,location,notimeswater,sunneeds,information,funfact,price) VALUES(@id,@name,@location,@water,@sun,@info,@fun,@price)";
+            string stm = @"INSERT INTO plantinformation(plantname,location,notimeswater,sunneeds,information,funfact,price) VALUES(@name,@location,@water,@sun,@info,@fun,@price)";
 
             db.Open();
             db.Insert(stm, values);

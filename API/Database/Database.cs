@@ -16,14 +16,18 @@ namespace API.database
         public Database()
         {
             string server = Environment.GetEnvironmentVariable("qlg_database_server");
+
             string name = Environment.GetEnvironmentVariable("qlg_database_name");
+
             string port = Environment.GetEnvironmentVariable("qlg_database_port");
+
             string userName = Environment.GetEnvironmentVariable("qlg_database_username");
+
             string password = Environment.GetEnvironmentVariable("qlg_database_password");
 
             System.Console.WriteLine("got the database " + server);
 
-            this.cs = $@"server = {server};user = {userName};database = {name};port = {port}; password={password};";
+            this.cs = $@"server = {server};userName = {userName};database = {name};port = {port}; password={password};";
             this.Conn = new MySqlConnection(this.cs);
         }
 
