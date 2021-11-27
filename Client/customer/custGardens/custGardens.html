@@ -46,50 +46,29 @@
         </header>
         
         <main>
-            <section class="gardens">
-            <div class="garden">
-                <button id="modalButton-1" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(1)">
+            <section class="gardens" id="gardenSection">
+              
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">House Plants</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                     <img id="myImg" src="./assets/garden-1.jpg" alt="House Plants" width="300" height="200"/>
-                    <h3 class="gardenText">House Plants</h3>
-                </button>
-            </div>
-
-            <div class="garden" id="garden">
-                <button id="modalButton-2" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(2)">
-                    <img id="myImg" src="./assets/garden-2.jpg" alt="House Plants" width="300" height="200"/>
-                    <h3 class="gardenText">Outdoor Garden</h3>
-                </button>
-            </div>
-            
-
-            <div class="garden">
-                <button id="modalButton-3" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(3)">
-                    <img id="myImg" src="./assets/garden-3.jpg" alt="House Plants" width="300" height="200"/>
-                    <h3 class="gardenText">Industrial Garden</h3>
-                </button>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" style="overflow-y: scroll">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">House Plants</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img id="myImg" src="./assets/garden-1.jpg" alt="House Plants" width="300" height="200"/>
-                        <div id="gardeninfo"></div>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                    <div id="gardeninfo"></div>
                 </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
-
-            </section>
+            </div>
+        </div>
 
             <div class="slidecontainer">
                 <input type="range" min="1" max="3" value="2" class="slider" id="myRange" onfocus="this.oldvalue = this.value" oninput="getSlider(this.value,this.oldvalue)">

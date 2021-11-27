@@ -4,6 +4,7 @@ function handleHello(){
   var helloHtml = document.getElementById('hello');
   var html = `<li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello ${obj.firstName}</a></li>`;
   helloHtml.innerHTML = html;
+  loadGardens()
 }
 
 const GetGarden = async (id) => {
@@ -37,51 +38,22 @@ function displayGarden(value){
   garden.classList.add('selected');
 }
 
-// function deleteClass(value){
-//   console.log(value);
-//   var garden = document.getElementById(`modalButton-${value}`);
-//   garden.classList.remove('selected');
-// }
-
-// range slider
-// var output = document.getElementById("demo");
-// output.innerHTML = slider.value;
-
-// slider.oninput = function() {
-//   console.log()
-//   output.innerHTML = this.value;
-// }
-
-
-
-
-
-
-
-// const displayDataInCaption = (data) =>{
-//   var info = document.getElementById("info");
-//   var html = `${data.information}`
-//   info.innerHTML = html;
-// }
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function() { 
-//   modal.style.display = "none";
-// }
-
-// var modal = new bootstrap.Modal(document.getElementById('myModal'), options)
-
-// //var modal = document.getElementById('myModal');
-
-// // Get the image and insert it inside the modal - use its "alt" text as a caption
-// var img = document.getElementById('myImg'); // House plant garden modal
-// var modalImg = document.getElementById("img01");
-// var captionText = document.getElementById("body");
-// img.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
+function loadGardens(){
+  const gardensURL = "https://localhost:5001/api/garden";
+  fetch(gardensURL).then(function(response){
+      console.log(response);
+      return response.json();
+  }).then(function(json){
+    var html = `<div class='gardens'>`
+    json.forEach((garden) => {
+        html += `<div class="garden">`;
+        html += `<button id="modalButton-${garden.gardenID}" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(${garden.gardenID})">`
+        html += `<img id="myImg" src="./assets/garden-${garden.gardenID}.jpg" alt="${garden.gardenType}" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
+        html += "</div>";
+      });
+      html += "</div>";
+      document.getElementById("gardenSection").innerHTML = html;
+  }).catch(function(error){
+      console.log(error);
+  })
+}

@@ -334,3 +334,8 @@ body.modal {
   box-shadow: 0 15px 18px 0 rgba(0, 0, 0, 0.24),
     0 20px 53px 0 rgba(0, 0, 0, 0.19);
 }
+
+.col-sm-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}

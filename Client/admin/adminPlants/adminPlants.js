@@ -1,5 +1,4 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
 
 function handleHello(){
     var helloHtml = document.getElementById('hello');
@@ -14,6 +13,17 @@ const GetPlant = async (id) => {
     const data = await response.json();
     displayModal(data);
     return data;
+}
+
+function displayModal(data){
+    console.log(data);
+    var garden = document.getElementById("exampleModal");
+    var html = `<div class="modal-dialog"><div class="modal-content">`;
+    html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel${data[0].plantID}">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
+    html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div>Location: <input type="edit" value="${data[0].location}" id="editLocation${data[0].plantID}"></div><div>Water Needs: <input type="edit" value="${data[0].numTimesWater}" id="editWater${data[0].plantID}""></div><div>Sun Needs: <input type="edit" value="${data[0].sunNeeds}" id="editSun${data[0].plantID}"></div><div id="plantinfo">Plant Information: <input type="edit" value="${data[0].information}"id="editInfo${data[0].plantID}"></div><div>Fun Fact: <input type="edit" value="${data[0].funFact}" id="editFact${data[0].plantID}"></div>`;
+    html += `<div>Price: <input type="edit" value="$${data[0].price}" id="editPrice${data[0].plantID}"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].plantID})">Delete</button><button type="button" class="btn btn-primary" onclick="putPlant(${data[0].plantID})" method="PUT">Save Changes</button>`;
+    html += `</div></div></div>`;
+    garden.innerHTML = html;
 }
 
 function addPlant(){
@@ -55,8 +65,8 @@ function addPlant(){
 }
 
 function displayAddMenu(){
-    var addMenu = document.getElementById("addButton");
-    var html = `<div><div>`;
+    var addMenu = document.getElementById("addModal");
+    var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Plant</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
     html += `</div><div class="modal-body"><div>Plant Name: <input type="edit" value="Enter Name" id="pname"></div><div>Location: <input type="edit" value="Enter Location" id="plocation"></div><div>Water Needs: <input type="edit" value="Enter Water Needs" id="pwater"></div><div>Sun Needs: <input type="edit" value="Enter Sun Needs" id="psun"></div><div id="plantinfo">Plant Information: <input type="edit" value="Enter Plant Information" id="pinfo"></div><div>Fun Fact: <input type="edit" value="Enter Fun Fact" id="pfact"></div>`;
     html += ` <div>Price: <input type="edit" value="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="addPlant()">Add Plant</button>`;
@@ -64,38 +74,22 @@ function displayAddMenu(){
     addMenu.innerHTML = html;
 }
 
-// var addMenu = document.getElementById("exampleModal");
-// var html = `<div class="modal-dialog"><div class="modal-content">`;
-// html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Plant</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-// html += `</div><div class="modal-body"><div>Plant Name: <input type="edit" value="Enter Name" id="pname"></div><div>Location: <input type="edit" value="Enter Location" id="plocation"></div><div>Water Needs: <input type="edit" value="Enter Water Needs" id="pwater"></div><div>Sun Needs: <input type="edit" value="Enter Sun Needs" id="psun"></div><div id="plantinfo">Plant Information: <input type="edit" value="Enter Plant Information" id="pinfo"></div><div>Fun Fact: <input type="edit" value="Enter Fun Fact" id="pfact"></div>`;
-// html += ` <div>Price: <input type="edit" value="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="addPlant()">Add Plant</button>`;
-// html += `</div></div></div>`;
-
-
-   
-    
-
-
-function displayModal(data){
-    console.log(data);
-    var garden = document.getElementById("exampleModal");
-    var html = `<div class="modal-dialog"><div class="modal-content">`;
-    html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel${data[0].plantName}">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-    html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div>Location: <input type="edit" value="${data[0].location}" id="editLocation${data[0].plantID}"></div><div>Water Needs: <input type="edit" value="${data[0].numTimesWater} id="editWater${data[0].plantID}""></div><div>Sun Needs: <input type="edit" value="${data[0].sunNeeds}" id="editSun${data[0].plantID}"></div><div id="plantinfo">Plant Information: <input type="edit" value="${data[0].information}"id="editInfo${data[0].plantID}"></div><div>Fun Fact: <input type="edit" value="${data[0].funFact}" id="editFact${data[0].plantID}"></div>`;
-    html += `<div>Price: <input type="edit" value="${data[0].price}" id="editPrice${data[0].plantID}"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="confirmation(${data[0].plantID})">Delete</button><button type="button" class="btn btn-primary" onclick="putPlant(${data[0].plantID})">Save Changes</button>`;
-    html += `</div></div></div>`;
-    garden.innerHTML = html;
-}
-
 function putPlant(id){
     const plantApiUrl = `https://localhost:5001/api/plantinformation/${id}`;
-    const namePlant = document.getElementById(`exampleModalLabel${id}`).value;
+    // const namePlant = document.getElementById(`exampleModalLabel${id}`).value;
+    // console.log(namePlant);
     const plantLocation = document.getElementById(`editLocation${id}`).value;
-    const waterNeeds = document.getElementById(`editWater${id}`).value;editWater;
-    const sunNeed = document.getElementById(`editSun${id}`).value;editSun;
-    const plantInfo = document.getElementById(`editInfo${id}`).value;editInfo;
-    const plantFact = document.getElementById(`editFact${id}`).value;editFact;
-    const plantPrice = document.getElementById(`editPrice${id}`).value;editPrice;
+    console.log(plantLocation);
+    const waterNeeds = document.getElementById(`editWater${id}`).value;
+    console.log(waterNeeds);
+    const sunNeed = document.getElementById(`editSun${id}`).value;
+    console.log(sunNeed);
+    const plantInfo = document.getElementById(`editInfo${id}`).value;
+    console.log(plantInfo);
+    const plantFact = document.getElementById(`editFact${id}`).value;
+    console.log(plantFact);
+    const plantPrice = document.getElementById(`editPrice${id}`).value;
+    console.log(plantPrice);
     fetch(plantApiUrl,{
         method: "PUT",
         headers: {
@@ -103,15 +97,14 @@ function putPlant(id){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            plantID: id,
-            plantName: namePlant,
-            location: plantLocation,
-            numTimesWater: waterNeeds,
-            sunNeeds: sunNeed,
-            information: plantInfo,
-            funFact: plantFact,
-            price: plantPrice
-
+            PlantID: id,
+            PlantName: 'Bee Balm',
+            Location: plantLocation,
+            NumTimesWater: waterNeeds,
+            SunNeeds: sunNeed,
+            Information: plantInfo,
+            FunFact: plantFact,
+            Price: plantPrice
         })
     }).then((response)=>{
         console.log(response)
@@ -126,12 +119,7 @@ function confirmation(id){//STILL WORKING ON THIS
     html += `<input type="button" onclick="removeElement(${id})" value="Delete" id="delete" >`;
     html += `<input type="button" value="Cancel" id="cancel" data-bs-dismiss="modal"></div>`;
     garden.innerHTML += html;
-}
-
-    
-    
-    
-  
+}  
 
 function removeElement(checkId){
     const plantUrl = `https://localhost:5001/api/plantinformation/${checkId}`;
@@ -150,14 +138,12 @@ function removeElement(checkId){
 
 function loadPlants(){
     const allPlantsApiUrl = "https://localhost:5001/api/plantinformation";
-
     fetch(allPlantsApiUrl).then(function(response){
         console.log(response);
         return response.json();
     }).then(function(json){
         let html = `<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">`;
         json.forEach((plantinformation) => {
-            console.log(json);
             html += `<button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(${plantinformation.plantID})">`;
             html += `<div class="col mb-5"> <div class="card h-100">  <img class="card-img-top" src="./assets/plant-${plantinformation.plantID}.jpeg" alt="${plantinformation.plantName}" height="200px"/>`;
             html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>$${plantinformation.price}</div></div>`

@@ -11799,5 +11799,5 @@ footer > * {
 .adminEditingBtns {
   display: flex;
   padding: 70px 250px 0px 250px;
-  justify-content: space-evenly;
+  justify-content: center;
 }
