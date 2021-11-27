@@ -16,6 +16,57 @@ const GetPlant = async (id) => {
     return data;
 }
 
+function addPlant(){
+    const plantApiUrl = "https://localhost:5001/api/plantinformation";
+    const namePlant = document.getElementById(`pname`);
+    const plantLocation = document.getElementById(`plocation`).value;
+    const waterNeeds = document.getElementById(`pwater`).value;editWater;
+    const sunNeed = document.getElementById(`psun`).value;editSun;
+    const plantInfo = document.getElementById(`pinfo`).value;editInfo;
+    const plantFact = document.getElementById(`pfact`).value;editFact;
+    const plantPrice = document.getElementById(`pprice`).value;editPrice;
+    
+
+    fetch(postPostsApiUrl, {
+        method: "POST",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+
+        },
+        body: JSON.stringify({
+            plantName: namePlant,
+            location: plantLocation,
+            numTimesWater: waterNeeds,
+            sunNeeds: sunNeed,
+            information: plantInfo,
+            funFact: plantFact,
+            price: plantPrice
+        })
+    })
+    .then((response)=>{
+        console.log(response);
+        loadPlants();
+    })
+}
+
+function displayAddMenu(){
+    var addMenu = document.getElementById("addButton");
+    var html = `<div class="modal-dialog"><div class="modal-content">`;
+    html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Plant</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
+    html += `</div><div class="modal-body"><div>Plant Name: <input type="edit" value="Enter Name" id="pname"></div><div>Location: <input type="edit" value="Enter Location" id="plocation"></div><div>Water Needs: <input type="edit" value="Enter Water Needs" id="pwater"></div><div>Sun Needs: <input type="edit" value="Enter Sun Needs" id="psun"></div><div id="plantinfo">Plant Information: <input type="edit" value="Enter Plant Information" id="pinfo"></div><div>Fun Fact: <input type="edit" value="Enter Fun Fact" id="pfact"></div>`;
+    html += ` <div>Price: <input type="edit" value="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="addPlant()">Add Plant</button>`;
+    html += `</div></div></div>`;
+    addMenu.innerHTML = html;
+}
+
+
+
+
+   
+    
+
+
 function displayModal(data){
     console.log(data);
     var garden = document.getElementById("exampleModal");
@@ -59,7 +110,7 @@ function putPlant(id){
     })    
 }
 
-function confirmation(id){
+function confirmation(id){//STILL WORKING ON THIS
     var garden = document.getElementById("exampleModal");
     var html = `<div id="delete_message">`;
     html += `<h2>Are You Sure You Want To Delete This</h2>`;
