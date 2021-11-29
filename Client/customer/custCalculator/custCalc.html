@@ -51,27 +51,27 @@
 
                           <div style="text-align:center">
                             <div class="answer-choice">
-                                <a href="#question2">  <button class="q1a2" id="q1c1">Sweet Shrub</button></a>
+                                <a href="#question2">  <button class="q1a2" id="q1c1" onclick="question1(this.id)">Sweet Shrub</button></a>
                             </div>
                           </div>
                     
                           <div class="quizRow">
                             <div class="answer-choice">
-                                <a href="#question2"> <button class="q1a3" id="q1c2">Bee Balm</button></a>
+                                <a href="#question2"> <button class="q1a3" id="q1c2" onclick="question1(this.id)">Bee Balm</button></a>
                             </div>
 
                             <div class="answer-choice">
-                                <a href="#question2"> <button class="q1a4" id="q1c3">Crimsoneyed Rosemallow</button></a>
+                                <a href="#question2"> <button class="q1a4" id="q1c3" onclick="question1(this.id)">Crimsoneyed Rosemallow</button></a>
                             </div>
                           </div>
 
                           <div class="quizRow">
                             <div class="answer-choice">
-                                <a href="#question2"> <button class="q1a3" id="q1c4">Swamp Azalea</button></a>
+                                <a href="#question2"> <button class="q1a3" id="q1c4" onclick="question1(this.id)">Swamp Azalea</button></a>
                             </div>
 
                             <div class="answer-choice">
-                                <a href="#question2"> <button class="q1a4" id="q1c5">Rose</button></a>
+                                <a href="#question2"> <button class="q1a4" id="q1c5" onclick="question1(this.id)">Rose</button></a>
                             </div>
                           </div>
 
@@ -84,19 +84,19 @@
                           <br>
                           <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#question3"><button class="q2a1" id="q2c1">A nearby window</button></a>
+                            <a href="#question3"><button class="q2a1" id="q2c1" onclick="question2(this.id)">A nearby window</button></a>
                           </div>
                           <div class="answer-choice">
-                            <a href="#question3"><button class="q2a2" id="q2c2">Direct exposure outside</button></a>
+                            <a href="#question3"><button class="q2a2" id="q2c2" onclick="question2(this.id)">Direct exposure outside</button></a>
                           </div>
                           </div>
                     
                           <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#question3"><button class="q2a3" id="q2c3">A heat lamp</button></a>
+                            <a href="#question3"><button class="q2a3" id="q2c3" onclick="question2(this.id)">A heat lamp</button></a>
                           </div>
                           <div class="answer-choice">
-                           <a href="#question3"> <button class="q2a4" id="q2c4">It doesn't....</button></a>
+                           <a href="#question3"> <button class="q2a4" id="q2c4" onclick="question2(this.id)">It doesn't....</button></a>
                           </div>
                           </div>
                         </div> 
@@ -108,19 +108,19 @@
                           <br>
                         <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#question4"><button class="q3a1" id="q3c1">Once a day</button></a>
+                            <a href="#question4"><button class="q3a1" id="q3c1" onclick="question3(this.id)">Once a day</button></a>
                           </div>
                           <div class="answer-choice">
-                            <a href="#question4"><button class="q3a2" id="q3c2">Once a week</button></a>
+                            <a href="#question4"><button class="q3a2" id="q3c2" onclick="question3(this.id)">Once a week</button></a>
                           </div>
                           </div>
                     
                           <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#question4"><button class="q3a3" id="q3c3">Whenever it rains</button></a>
+                            <a href="#question4"><button class="q3a3" id="q3c3" onclick="question3(this.id)">Whenever it rains</button></a>
                           </div>
                           <div class="answer-choice">
-                            <a href="#question4"><button class="q3a4" id="q3c4">Never</button></a>
+                            <a href="#question4"><button class="q3a4" id="q3c4" onclick="question3(this.id)">Never</button></a>
                           </div>
                           </div>
                         </div> 
@@ -133,19 +133,19 @@
                           <br>
                           <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#results"><button class="q4a1" id="q4c1">Very often</button></a>
+                            <a href="#results"><button class="q4a1" id="q4c1" onclick="question4(this.id)">Very often</button></a>
                           </div>
                           <div class="answer-choice">
-                            <a href="#results"><button class="q4a2" id="q4c2">Often</button></a>
+                            <a href="#results"><button class="q4a2" id="q4c2" onclick="question4(this.id)">Often</button></a>
                           </div>
                           </div>
                     
                           <div class="quizRow">
                           <div class="answer-choice">
-                            <a href="#results"><button class="q4a3" id="q4c3">Rarely</button></a>
+                            <a href="#results"><button class="q4a3" id="q4c3" onclick="question4(this.id)">Rarely</button></a>
                           </div>
                           <div class="answer-choice">
-                            <a href="#results"><button class="q4a4" id="q4c4">Never</button></a>
+                            <a href="#results"><button class="q4a4" id="q4c4" onclick="question4(this.id)">Never</button></a>
                           </div>
                           </div>
                         </div> 
@@ -157,14 +157,20 @@
                         <div class="garden" id="results">
 
                             <h2 id="myImg resultsButton">View Results</h2>
-                            <img id="myImg" src="../../assets/ElephantLogo_Transparent.png" alt="Rose" style="width:200px; height:200px;">
+                            <img id="myImg" src="Client/assets/Logo_Background.png" alt="Calculator Results" style="width:200px; height:200px;">
                                 
                             </div>
 
                         <!-- The Modal -->
                             <div id="myModal" class="modal">
                                 <span class="close">&times;</span>
+                                <label id=phealth>Your Plant is: </label>
                                 <img class="modal-content" id="img01">
+                                <div id=pname>Plant name: </div>
+                                <div id="sunscore">Sun Score:</div>
+                                <div id="waterscore">Water Score:</div>
+                                <div id="advice">Advice:</div>
+
                                 <div id="caption"></div>
                             </div>
                         </div>
