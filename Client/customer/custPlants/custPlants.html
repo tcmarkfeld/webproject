@@ -67,6 +67,25 @@
             </div>
         </div>
 
+        <!-- Submissions Modal -->
+        <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="submitModalLabel">Enter the plant below:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>Plant:<input id="plantSubmission" type="edit" value="Plant" /></div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="sendSuggestion()">Send Suggestion</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!--CART MODAL-->
         <div class="modal" tabindex="-1" id="cartModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
@@ -94,7 +113,7 @@
         </section>
 
         <div class="suggestions">
-            <p>We specialize in plants found in the southeast. If you don't see a plant you are interested in, please <a href="#" class="link-primary">let us know</a></p>
+            <p>We specialize in plants found in the southeast. If you don't see a plant you are interested in, please <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#submitModal">let us know</button></p>
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">

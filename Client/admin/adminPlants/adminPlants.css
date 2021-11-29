@@ -11720,11 +11720,6 @@ nav > * {
   position: fixed;
 }
 
-nav:hover > * {
-  background-color: #990000;
-  transition: 0.5s;
-}
-
 .sticky {
   background-color: #990000;
 }
@@ -11800,4 +11795,8 @@ footer > * {
   display: flex;
   padding: 70px 250px 0px 250px;
   justify-content: center;
+}
+
+.input {
+  background-color: white;
 }

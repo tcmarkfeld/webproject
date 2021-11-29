@@ -25,85 +25,68 @@ function displayModal(data){
     garden.innerHTML = html;
 }
 
-
 const GetPlantCart = async (id) => {
     const plantURL = `https://localhost:5001/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
     const data = await response.json();
-    addProduct(data);
+    addToCart(data);
     return data;
 }
 
-var cart = {};
+var cart = [];
 async function addToCart(data){
     var cartHtml = document.getElementById("cartNum");
 	var productName = data[0].plantName;
 	var price = data[0].price;
 
-	cart[productName] = price;
+    cart[productName] = price
 	alert(productName + " has successfully been added to your cart");
     
-	console.log(cart);
-	localStorage.setItem("myCart", cart);
-    cartHtml.innerHTML = localStorage.length;
-    console.log(localStorage.getItem('myCart').length + " addToCart method")
-    console.log(localStorage.getItem('myCart'))
-}
-
-function addProduct(data){
-    let products = [];
-    if(localStorage.getItem('myCart')){
-        products = JSON.parse(localStorage.getItem('myCart'));
-    }
-    products.push({'Plant Name' : data[0].plantName, 'Price' : data[0].price});
-    localStorage.setItem('myCart', JSON.stringify(products));
-
-    alert(data[0].plantName + " has successfully been added to your cart");
+    
+    console.log(cart);
+	sessionStorage.setItem("myCart", JSON.stringify(cart));
+    let length = cart.length;
+    cartHtml.innerHTML = sessionStorage.getItem('myCart').length;
+    console.log(length + " addToCart method")
+    console.log(sessionStorage.getItem('myCart'))
 }
 
 function getCart(){
+    console.log('get cart method')
     var cartHtml = document.getElementById("cartNum");
-	try {
-        var test = localStorage.getItem("myCart");
-        console.log(JSON.parse(test) + " getCart method");
-        cartHtml.innerHTML = localStorage.length;
-    } catch (error) {
+    var test = sessionStorage.getItem("myCart");
+    if (test !== null){
+        console.log(test.length + " getCart method");
+        cartHtml.innerHTML = sessionStorage.length;
+    } 
+    else {
         cartHtml.innerHTML = '0';
     }
-    // if (JSON.parse(test) == 0 || JSON.parse(test) == null){
-        
-    // }
-    // else{
-    //     console.log(localStorage.length)
-    //     cartHtml.innerHTML = localStorage.length;
-    // }
 }
 
 function clearCart(){
-	localStorage.removeItem("myCart");
+	sessionStorage.removeItem("myCart");
 }
 
 function removeProduct(productId){
-    let storageProducts = JSON.parse(localStorage.getItem('products'));
+    let storageProducts = JSON.parse(sessionStorage.getItem('products'));
     let products = storageProducts.filter(product => product.productId !== productId );
-    localStorage.setItem('products', JSON.stringify(products));
+    sessionStorage.setItem('products', JSON.stringify(products));
 }
 
 function cartModal(){
-	var cart = JSON.parse(localStorage.getItem("myCart"));
+	var cart = sessionStorage.getItem("myCart");
     console.log(cart + " cartModal method");
     html = `<div class="modal-dialog"><div class="modal-content">`
     html += `<div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
-    html += `</div><div class="modal-body"><p>${cart.toString()}</p></div><div class="modal-footer">`
+    html += `</div><div class="modal-body"><p>${cart.toString()}</p><button id='removeButton' type="button" class="btn btn-danger">Remove</button></div><div class="modal-footer">`
     html += `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div></div>`
 	document.getElementById("cartModal").innerHTML = html;
-
 }
 
 function loadPlants(){
     const allPlantsApiUrl = "https://localhost:5001/api/plantinformation";
     fetch(allPlantsApiUrl).then(function(response){
-        console.log(response);
         return response.json();
     }).then(function(json){
         let html = `<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">`;
@@ -117,5 +100,30 @@ function loadPlants(){
         document.getElementById("plantList").innerHTML = html;
     }).catch(function(error){
         console.log(error);
+    })
+}
+
+function sendSuggestion(){
+    const suggestionURL = 'https://localhost:5001/api/submissions';
+    const plant = document.getElementById(`plantSubmission`).value;
+
+    fetch(suggestionURL, {
+        method: "POST",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({
+            plant: plant,
+        })
+    })
+    .then((response)=>{
+        if (response.status == 200){
+            alert("Your suggestion has been successfully submitted!");
+        }
+        else{
+            alert("Something went wrong. Please try again.")
+        }
+        console.log(response);
     })
 }
