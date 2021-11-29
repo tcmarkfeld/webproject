@@ -12,7 +12,7 @@ namespace API.Models
         public string SunNeeds { get; set; }
         public string Information { get; set; }
         public string FunFact { get; set; }
-        public double Price { get; set; }
+        public string Price { get; set; }
         public IPlantInformationDataHandler DataHandler { get; set; }
 
         public PlantInformation()

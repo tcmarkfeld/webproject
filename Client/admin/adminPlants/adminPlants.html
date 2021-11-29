@@ -47,9 +47,10 @@
 
         <!-- Add Button-->
         <section class="adminEditingBtns" id="addButton">
-            <button type="button" id="adminAdd" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addPlantModal" onclick="displayAddMenu()">Add</button>
+            <button type="button" id="adminAdd" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addModal" onclick="displayAddMenu()">Add</button>
         </section>
 
+        <!-- Add Modal -->
         <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
@@ -58,6 +59,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
             <div class="modal-body">
+                <div>Plant Picture: <input type="file" value="Choose File" id="ppicture"></div>
                 <div>Plant Name: <input type="edit" value="Enter Name" id="pname"></div>
                 <div>Location: <input type="edit" value="Enter Location" id="plocation"></div>
                 <div>Water Needs: <input type="edit" value="Enter Water Needs" id="pwater"></div>
@@ -74,7 +76,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Plant Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="overflow-y: scroll">
             <div class="modal-content">
@@ -96,6 +98,24 @@
             </div>
         </div>
 
+        <!-- Submissions Modal -->
+        <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="submitModalLabel">Customer Submissions:</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>Plants:<input id="plantSubmission" type="text" value="Plant" /></div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <!-- Section-->
         <section class="py-5">
             <div id= "plantList" class="container px-4 px-lg-5 mt-5" style="margin-right: 25px;margin-left: 25px;">
@@ -106,7 +126,7 @@
         </section>
 
         <div class="suggestions">
-            <p><a href="#" class="link-primary">View Customer Plant Submissions</a></p>
+            <p><button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#submitModal" onclick="getSuggestions()">View Customer Plant Submissions</button></p>
         </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
