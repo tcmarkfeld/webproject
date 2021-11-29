@@ -11720,11 +11720,6 @@ nav > * {
   position: fixed;
 }
 
-nav:hover > * {
-  background-color: #990000;
-  transition: 0.5s;
-}
-
 .sticky {
   background-color: #990000;
 }

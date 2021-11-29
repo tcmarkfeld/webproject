@@ -48,10 +48,6 @@ nav > * {
   padding-top: 50px;
 }
 
-nav:hover > *{
-  background-color: #990000;
-  transition: 0.5s;
-}
 
 .sticky {
   background-color: #990000;
