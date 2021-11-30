@@ -32,24 +32,18 @@ img.onclick = function(){
     sunScore.innerHTML = `Sun Score: ${answer2}`;
     waterScore.innerHTML = `Water Score: ${answer3}`;
     advice.innerHTML = `Advice: ${adviceLabel}`;
-    //calculator2Database();
+    calculator2Database();
   }
   
 
 }
 
-function calculator2Database(){//STILL NEEDS TO BE WORKED ON
-  const plantApiUrl = "https://localhost:5001/api/plantinformation";
-  const namePlant = document.getElementById(`pname`).value;
-  const plantLocation = document.getElementById(`plocation`).value;
-    const waterNeeds = document.getElementById(`pwater`).value;
-    const sunNeed = document.getElementById(`psun`).value;
-    const plantInfo = document.getElementById(`pinfo`).value;
-    const plantFact = document.getElementById(`pfact`).value;
-    const plantPrice = document.getElementById(`pprice`).value;
-    
-
-    fetch(plantApiUrl, {
+function calculator2Database(){//Should work
+  const calculatorApiUrl = "https://localhost:5001/api/healthcalculator";
+  const namePlant = answer1;
+  const sunScore = answer2;
+  const waterScore = answer3;
+    fetch(calculatorApiUrl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
@@ -57,13 +51,9 @@ function calculator2Database(){//STILL NEEDS TO BE WORKED ON
 
         },
         body: JSON.stringify({
-            plantName: namePlant,
-            location: plantLocation,
-            numTimesWater: waterNeeds,
-            sunNeeds: sunNeed,
-            information: plantInfo,
-            funFact: plantFact,
-            price: plantPrice
+            PlantType: namePlant,
+            WaterScore: waterScore,
+            SunScore: sunScore,
         })
     })
     .then((response)=>{
@@ -71,8 +61,6 @@ function calculator2Database(){//STILL NEEDS TO BE WORKED ON
         loadPlants();
     })
     var addMenu = document.getElementById("addButton");
-    var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-    addMenu.innerHTML = html;
 
 }
 
