@@ -20,7 +20,7 @@ function displayModal(data){
     var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
     html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div>Location: ${data[0].location}</div><div>Water Needs: ${data[0].numTimesWater}</div><div>Sun Needs: ${data[0].sunNeeds}</div><div id="plantinfo">Plant Information: ${data[0].information}</div><div>Fun Fact: ${data[0].funFact}</div>`;
-    html += `<div>Price: $${data[0].price}</div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="GetPlantCart(${data[0].plantID})">Add to Cart</button>`;
+    html += `<div>Price: ${data[0].price}</div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="GetPlantCart(${data[0].plantID})">Add to Cart</button>`;
     html += `</div></div></div>`;
     garden.innerHTML = html;
 }
@@ -37,27 +37,29 @@ var cart = [];
 async function addToCart(data){
     var cartHtml = document.getElementById("cartNum");
 	var productName = data[0].plantName;
-	var price = data[0].price;
 
-    cart[productName] = price
+    cart.push(JSON.stringify(data[0]));
 	alert(productName + " has successfully been added to your cart");
     
     
     console.log(cart);
-	sessionStorage.setItem("myCart", JSON.stringify(cart));
-    let length = cart.length;
-    cartHtml.innerHTML = sessionStorage.getItem('myCart').length;
+    sessionStorage.getItem('myCart');
+	sessionStorage.setItem("myCart", cart);
+    let length = Object.keys(cart).length;
+    cartHtml.innerHTML = length;
     console.log(length + " addToCart method")
-    console.log(sessionStorage.getItem('myCart'))
+    console.log(JSON.parse(sessionStorage.getItem('myCart')))
 }
 
 function getCart(){
-    console.log('get cart method')
+    var test = [];
     var cartHtml = document.getElementById("cartNum");
-    var test = sessionStorage.getItem("myCart");
+    test.push(JSON.stringify(sessionStorage.getItem("myCart")));
+    let length = Object.keys(test).length;
+    console.log(test);
     if (test !== null){
-        console.log(test.length + " getCart method");
-        cartHtml.innerHTML = sessionStorage.length;
+        console.log(length + " getCart method");
+        cartHtml.innerHTML = length;
     } 
     else {
         cartHtml.innerHTML = '0';
@@ -93,7 +95,7 @@ function loadPlants(){
         json.forEach((plantinformation) => {
             html += `<button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(${plantinformation.plantID})">`;
             html += `<div class="col mb-5"> <div class="card h-100">  <img class="card-img-top" src="./assets/plant-${plantinformation.plantID}.jpeg" alt="${plantinformation.plantName}" height="200px"/>`;
-            html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>$${plantinformation.price}</div></div>`;
+            html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>${plantinformation.price}</div></div>`;
             html += `<div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Plant Info</a></div></div></div></div></button>`;
         });
         html += "</div>";
