@@ -26,7 +26,7 @@ namespace API.database
         {
             var values = GetValues(healthCalculator);
 
-            string stm = @"INSERT INTO healthcalculator(testid,planttype,timeswatered) VALUES(@id,@type,@times)";
+            string stm = @"INSERT INTO healthcalculator(testid,planttype,waterscore,sunscore) VALUES(@id,@type,@water,@sun)";
 
             db.Open();
             db.Insert(stm, values);
@@ -47,7 +47,8 @@ namespace API.database
                 {
                     TestID = item.testid,
                     PlantType = item.planttype,
-                    TimesWatered = item.timeswatered
+                    WaterScore = item.waterscore,
+                    SunScore = item.sunscore
                 };
                 myCalculator.Add(temp);
             }
@@ -70,7 +71,8 @@ namespace API.database
             var values = new Dictionary<string, object>(){
                 {"@id", healthCalculator.TestID},
                 {"@type", healthCalculator.PlantType},
-                {"@times", healthCalculator.TimesWatered}
+                {"@water", healthCalculator.WaterScore},
+                {"@sun", healthCalculator.SunScore}
             };
 
             return values;

@@ -7,7 +7,8 @@ namespace API.Models
     {
         public int TestID { get; set; }
         public string PlantType { get; set; }
-        public string TimesWatered { get; set; }
+        public string WaterScore { get; set; }
+        public string SunScore { get; set; }
         public IHealthCalculatorDataHandler DataHandler { get; set; }
 
         public HealthCalculator()
