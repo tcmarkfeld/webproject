@@ -43,8 +43,8 @@ async function addToCart(data){
     
     
     console.log(cart);
-    sessionStorage.getItem('myCart');
-	sessionStorage.setItem("myCart", cart);
+    cart.push(JSON.parse(sessionStorage.getItem('myCart'))); //not working
+	sessionStorage.setItem("myCart", JSON.stringify(cart));
     let length = Object.keys(cart).length;
     cartHtml.innerHTML = length;
     console.log(length + " addToCart method")
@@ -52,12 +52,11 @@ async function addToCart(data){
 }
 
 function getCart(){
-    var test = [];
     var cartHtml = document.getElementById("cartNum");
-    test.push(JSON.stringify(sessionStorage.getItem("myCart")));
+    var test = JSON.parse(sessionStorage.getItem("myCart"));
     let length = Object.keys(test).length;
     console.log(test);
-    if (test !== null){
+    if (test !== 'null'){
         console.log(length + " getCart method");
         cartHtml.innerHTML = length;
     } 
@@ -77,7 +76,7 @@ function removeProduct(productId){
 }
 
 function cartModal(){
-	var cart = sessionStorage.getItem("myCart");
+	var cart = JSON.parse(sessionStorage.getItem("myCart"));
     console.log(cart + " cartModal method");
     html = `<div class="modal-dialog"><div class="modal-content">`
     html += `<div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
