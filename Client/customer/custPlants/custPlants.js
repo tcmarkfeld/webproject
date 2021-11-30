@@ -33,10 +33,16 @@ const GetPlantCart = async (id) => {
     return data;
 }
 
-var cart = [];
+if (sessionStorage.getItem("myCart")){
+    var cart = JSON.parse(sessionStorage.getItem("myCart"));
+} 
+else{
+    var cart = [];
+} 
+
 async function addToCart(data){
     var test = JSON.parse(sessionStorage.getItem("myCart"));
-    if (test === null){
+    if (test === null || test === "null"){
         cart = [];
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
@@ -51,6 +57,8 @@ async function addToCart(data){
         console.log(JSON.parse(sessionStorage.getItem('myCart')))
     }
     else{
+        //cart.push(test); // NO
+        console.log('else')
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
     
@@ -97,11 +105,14 @@ function cartModal(){
         document.getElementById("cartModal").innerHTML = html;
     }
     else{
-        console.log(cart + " cartModal method");
-        var html = `<div class="modal-dialog"><div class="modal-content">`
-        html += `<div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
-        html += `</div><div class="modal-body"><p>${cart}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${1})'>Remove</button></p></div><div class="modal-footer">`
-        html += `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div></div>`
+        var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        html += `</div><div class="modal-body">`
+        cart.forEach((data) => {
+            var parsedData = JSON.parse(data);
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${1})'>Remove</button></p>`
+        });
+        html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div>`
+        html += `</div>`
         document.getElementById("cartModal").innerHTML = html;
     }
 }
