@@ -12,6 +12,8 @@
        <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
        <link href="../../root.css" rel="stylesheet" />
        <link rel="stylesheet" href="./custPlants.css">
+       <!-- Core theme JS-->
+       <script type="module" src="custPlants.js"></script>
    </head>
     <body onload="handleHello(), getCart()">
         <!-- Navigation-->
@@ -21,13 +23,12 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custPlants/custPlants.html">Plants</a></li>
+                        <li class="nav-item"><a id="activePage" class="nav-link active" aria-current="page" href="../custPlants/custPlants.html">Plants</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custGardens/custGardens.html">Gardens</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
                     </ul>
                     <form class="d-flex">
                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="cartModal()">
-                        <!-- <button class="btn btn-outline-dark" type="submit"> -->
                             <i class="bi-cart-fill me-1"></i>
                             Cart
                             <span id="cartNum" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
@@ -69,14 +70,14 @@
 
         <!-- Submissions Modal -->
         <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="submitModalLabel">Enter the plant below:</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div>Plant:<input id="plantSubmission" type="edit" value="Plant" /></div>
+                    <div>Plant:<input style="width: 50%;" class='form-control' id="plantSubmission" type="edit" value="Plant" /></div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -99,11 +100,30 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Checkout</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">Checkout</button>
                 </div>
               </div>
             </div>
           </div>
+          
+          <!--CHECKOUT MODAL-->
+          <div class="modal" tabindex="-1" id="checkoutModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Your cart is empty</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <!-- Section-->
         <section class="py-5">
@@ -121,7 +141,5 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="custPlants.js"></script>
     </body>
 </html>

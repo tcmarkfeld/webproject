@@ -6,6 +6,7 @@ namespace API.Interfaces
     public interface IGardenDataHandler
     {
         public List<Garden> Select();
+        public List<Garden> SelectHighest();
         public List<Garden> SelectID(int id);
         public void Delete(int id);
         public void Insert(Garden garden);

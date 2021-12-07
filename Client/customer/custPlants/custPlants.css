@@ -657,6 +657,7 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
+  min-width: -webkit-fill-available;
   width: 100%;
   /* padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem); */
@@ -4318,6 +4319,7 @@ fieldset:disabled .btn {
 .navbar > .container-lg,
 .navbar > .container-xl,
 .navbar > .container-xxl {
+  min-width: -webkit-fill-available;
   display: flex;
   flex-wrap: inherit;
   align-items: center;
@@ -11778,4 +11780,13 @@ footer > * {
 
 .fw-bolder {
   font-size: 32px;
+}
+
+.input {
+  background-color: white;
+  color: black;
+}
+
+#activePage {
+  color: #990000;
 }

@@ -13,25 +13,18 @@
         <link href="../../root.css" rel="stylesheet" />
         <link rel="stylesheet" href="./adminProfile.css">
     </head>
-    <body onload="populateFields()">
+    <body onload="GetAdmin()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="../../landingCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+                <a class="navbar-brand" href="../adminCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminGardens/adminGarden.html">Gardens</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminReports/adminReports.html">Reports</a></li>
+                        <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
+                        <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminGardens/adminGarden.html">Gardens</a></li>
+                        <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminReports/adminReports.html">Reports</a></li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -50,13 +43,12 @@
                             <div id="lname" class="col-md-6"><label class="labels">Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>Smith</span></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>(205)-443-8739</span></div>
-                            <div class="col-md-12"><label class="labels">Address Line 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>382 Piedmont Road, Tuscaloosa, Alabama</span></div>
-                            <!-- <div class="col-md-12"><label class="labels">Address Line 2:&nbsp;&nbsp;&nbsp;</label><span>N/A</span></div> -->
-                            <div class="col-md-12"><label class="labels">Postcode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>35401</span></div>
-                            <div class="col-md-12" id="email"><label class="labels">Email Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>jsmith@crimson.ua.edu</span></div>
+                            <div class="col-md-12" id="adminPos"><label class="labels">Position:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>Unknown</span></div>
+                            <div class="col-md-12" id="email"><label class="labels">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>johnsmith@admin.com</span></div>
+                            <div class="col-md-12" id="startDate"><label class="labels">Start Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><span>01/01/21</span></div>
                         </div>
                         <br><div><a href="../adminEditProfile/adminEditProfile.html" class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></a></div>
+                        <br><div><a href="../../carousel.html" class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sign Out</button></a></div>
                     </div>
                 </div>
             </div>

@@ -12,18 +12,20 @@
        <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
        <link href="../../root.css" rel="stylesheet" />
        <link rel="stylesheet" href="./adminPlants.css">
+       <!-- Core theme JS-->
+       <script type="module" src="./adminPlants.js"></script>
     </head>
     <body onload="handleHello()">  
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="../../landingCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+                <a class="navbar-brand" href="../adminCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4"
                     style="font-size: 18px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"
                     >
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
+                        <li class="nav-item"><a id="activePage" class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminGardens/adminGarden.html">Gardens</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminReports/adminReports.html">Reports</a></li>
                     </ul>
@@ -100,7 +102,7 @@
 
         <!-- Submissions Modal -->
         <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="overflow-y: scroll">
+            <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="submitModalLabel">Customer Submissions:</h5>
@@ -134,7 +136,8 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="adminPlants.js"></script>
+        
+        <!-- Firebase -->
+        <script type="module"></script>
     </body>
 </html>

@@ -34,6 +34,26 @@ namespace API.database
             return myGarden;
         }
 
+        public List<Garden> SelectHighest()
+        {
+            List<Garden> myGarden = new List<Garden>();
+
+            string stm = @"SELECT gardenid from garden order by gardenid desc limit 1";
+            db.Open();
+            List<ExpandoObject> results = db.Select(stm);
+
+            foreach (dynamic item in results)
+            {
+                Garden temp = new Garden()
+                {
+                    GardenID = item.gardenid
+                };
+                myGarden.Add(temp);
+            }
+            db.Close();
+            return myGarden;
+        }
+
         public List<Garden> SelectID(int id)
         {
             List<Garden> myGarden = new List<Garden>();

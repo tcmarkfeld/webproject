@@ -45,6 +45,7 @@ nav > * {
   background-color: transparent;
   position: fixed;
   padding-top: 50px;
+  z-index: 1;
 }
 
 .sticky {
@@ -84,10 +85,9 @@ footer > * {
   list-style-type: none;
 }
 
-/* .container {
-  position: relative;
-  width: 50%;
-} */
+.container {
+  min-width: -webkit-fill-available;
+}
 .image {
   opacity: 1;
   display: block;
@@ -282,7 +282,7 @@ body.modal {
 }
 
 .modal-body {
-  max-height: calc(100vh - 210px);
+  max-height: 50vh;
   overflow-y: auto;
 }
 
@@ -333,4 +333,8 @@ body.modal {
 .col-sm-3 {
   flex: 0 0 auto;
   width: 25%;
+}
+
+#activePage {
+  color: #990000;
 }

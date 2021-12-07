@@ -23,7 +23,7 @@ namespace API.database
 
         public void Insert(Customer customer)
         {
-            string stm = @"INSERT INTO customer(customerid,firstname,lastname,birthdate,email,password,creditcard,shippingaddress,billingaddress,pastPurchases,status) VALUES(@id,@fn,@ln,@bd,@email,@pass,@cc,@sa,@ba,@pp,@status)";
+            string stm = @"INSERT INTO customer(customerid,firstname,lastname,birthdate,email,password,creditcard,shippingaddress,billingaddress,pastPurchases,status) VALUES(@id,@fn,@ln,@bd,@email,@pass,' ',' ',' ',' ',@status)";
             var values = GetValues(customer);
 
             db.Open();
@@ -110,7 +110,7 @@ namespace API.database
                 {"@ln", customer.LastName},
                 {"@bd", customer.Birthdate},
                 {"@email", customer.Email},
-                {"@password", customer.Password},
+                {"@pass", customer.Password},
                 {"@cc", customer.CreditCard},
                 {"@sa", customer.ShippingAddress},
                 {"@ba", customer.BillingAddress},

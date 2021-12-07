@@ -59,6 +59,26 @@ namespace API.database
             return myPlant;
         }
 
+        public List<PlantInformation> SelectHighest()
+        {
+            List<PlantInformation> myPlant = new List<PlantInformation>();
+
+            string stm = @"SELECT plantid from plantinformation order by plantid desc limit 1";
+            db.Open();
+            List<ExpandoObject> results = db.Select(stm);
+
+            foreach (dynamic item in results)
+            {
+                PlantInformation temp = new PlantInformation()
+                {
+                    PlantID = item.plantid,
+                };
+                myPlant.Add(temp);
+            }
+            db.Close();
+            return myPlant;
+        }
+
         public List<PlantInformation> SelectID(int id)
         {
             List<PlantInformation> myPlant = new List<PlantInformation>();
