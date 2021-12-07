@@ -41,8 +41,13 @@ img.onclick = function(){
 
 }
 
+<<<<<<< HEAD
 function calculator2Database(){
   const calculatorApiUrl = "https://qlgapi.herokuapp.com/api/healthcalculator";
+=======
+function calculator2Database(){//Should work
+  const calculatorApiUrl = "https://localhost:5001/api/healthcalculator";
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
   const namePlant = answer1;
   const sunScore = answer2;
   const waterScore = answer3;
@@ -62,7 +67,11 @@ function calculator2Database(){
     .then((response)=>{
         console.log(response);
     })
+<<<<<<< HEAD
 
+=======
+    var addMenu = document.getElementById("addButton");
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
 
 }
 

@@ -29,6 +29,14 @@ function populateFields(data){
     var email = document.getElementById("email");
     var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${data[0].email}' readonly></div>`;
     email.innerHTML = html;
+<<<<<<< HEAD
+=======
+
+    var address = document.getElementById("aline1");
+    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='${obj.shippingaddress}'></div>`;
+    address.innerHTML = html;
+    
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
 
     if(data[0].shippingAddress == 'undefined' || data[0].shippingAddress == undefined){
         var address = document.getElementById("aline1");

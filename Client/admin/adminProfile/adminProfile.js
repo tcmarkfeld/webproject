@@ -14,6 +14,7 @@ function populateFields(data){
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
+<<<<<<< HEAD
     var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFirst" class='form-control' placeholder='First Name' value='${data[0].firstName}' readonly></div>`;
     fname.innerHTML = html;
 
@@ -33,3 +34,25 @@ function populateFields(data){
     var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${data[0].startDate}' readonly></div>`;
     date.innerHTML = html;
 }
+=======
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFirst" class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
+    fname.innerHTML = html;
+
+    var lname = document.getElementById("lname");
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text'  id="editLast" class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
+    lname.innerHTML = html;
+    
+    var email = document.getElementById("email");
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    email.innerHTML = html;
+
+    var position = document.getElementById("adminPos");
+    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text'  id="editPosition" class='form-control' placeholder='Unknown' value='${obj.position}'></div>`;
+    position.innerHTML = html;
+
+    var date = document.getElementById("startDate");
+    var html = `<div class='col-md-6'><label class='labels'>Address Line 1</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startdate}'></div>`;
+    date.innerHTML = html;
+}
+
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058

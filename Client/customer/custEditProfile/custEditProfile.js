@@ -14,6 +14,7 @@ function populateFields(data){
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
+<<<<<<< HEAD
     var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${data[0].firstName}'></div>`;
     fname.innerHTML = html;
     var lname = document.getElementById("lname");
@@ -35,6 +36,30 @@ function saveProfile(){
     const lastName = document.getElementById("editLname").value;
     const email = document.getElementById("editEmail").value;
     const address = document.getElementById("editAddress").value;
+=======
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
+    fname.innerHTML = html;
+    var lname = document.getElementById("lname");
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' id="editLname" class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
+    lname.innerHTML = html;
+    
+    var email = document.getElementById("email");
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    email.innerHTML = html;
+
+    var address = document.getElementById("aline1");
+    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' id="editAddress"class='form-control' placeholder='Address Line' value='${obj.billingAddress}'></div>`;
+    address.innerHTML = html;
+
+}
+
+function saveProfile(){
+    const profileApiUrl = `https://localhost:5001/api/customer/${obj.customerid}`;
+    const firstName = document.getElementById("editFname");
+    const lastName = document.getElementById("editLname");
+    const email = document.getElementById("editEmail");
+    const address = document.getElementById("editAddress");
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
     fetch(profileApiUrl,{
         method: "PUT",
         headers: {
@@ -42,6 +67,7 @@ function saveProfile(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
+<<<<<<< HEAD
             CustomerID: obj.customerID,
             FirstName: firstName,
             LastName: lastName,
@@ -53,17 +79,35 @@ function saveProfile(){
             BillingAddress: address,
             PastPurchases: obj.pastPurchases,
             Status: obj.status
+=======
+            CustomerID: obj.customerid,
+            FirstName: firstName,
+            LastName: lastName,
+            Birthdate: obj.Birthdate,
+            Email: email,
+            Password: obj.Password,
+            CreditCard: obj.CreditCard,
+            ShippingAddress: address,
+            BillingAddress: address,
+            PastPurchases: obj.PastPurchases,
+            Status: obj.Status
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
         })
     }).then((response)=>{
         if (response.status == 200){
             alert("Profile has been successfully saved!");
+<<<<<<< HEAD
             window.location.replace("../custProfile/custProfile.html");
+=======
+            populateFields();
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
         }
         else{
             alert("Something went wrong. Please try again");
         }
     })   
 }
+<<<<<<< HEAD
   
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
@@ -199,3 +243,5 @@ function sendOrderDatabase(){
         sessionStorage.removeItem('myCart');
     })
 }
+=======
+>>>>>>> 6ea380894859966ebb32b82f92e7b50b27dca058
