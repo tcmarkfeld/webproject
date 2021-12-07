@@ -1,1 +1,1 @@
-# webproject
+This was a full-stack web development project. As a team of three, we gathered determined the scope of the project, gathered requirements, and documented each step. We did this using waterfall methodology, finishing each stage before moving on to the next. Our database is hosted on heroku, and we also have separate githubs for the API and Client which are also hosted on heroku. This was my first full-stack project and I learned a ton.
